@@ -1,8 +1,7 @@
-package com.doisbitsw.orser.api.carros;
+package com.doisbitsw.orser.api.af;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -10,39 +9,47 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/carros")
-public class CarrosController {
+@RequestMapping("/api/v1/af")
+public class AfController {
     @Autowired
-    private CarroService service;
+    private AfService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<CarroDTO> carros = service.getCarros();
+        List<AfDTO> carros = service.getCarros();
         return ResponseEntity.ok(carros);
     }
 
+
+
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        CarroDTO carro = service.getCarroById(id);
+        AfDTO carro = service.getCarroById(id);
 
         return ResponseEntity.ok(carro);
     }
 
-    @GetMapping("/tipo/{tipo}")
-    public ResponseEntity getCarrosByTipo(@PathVariable("tipo") String tipo) {
-        List<CarroDTO> carros = service.getCarrosByTipo(tipo);
+    @GetMapping("/fornecedor/{fornecedor}")
+    public ResponseEntity getByFornecedor(@PathVariable("fornecedor") Long fornecedor) {
+        List<AfDTO> carros = service.getByFornecedor(fornecedor);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/af")
+    public long getAf() {
+        return service.getAf();
+    }
+
+
+
 
     @PostMapping
+    public ResponseEntity post(@RequestBody Af af) {
 
-    public ResponseEntity post(@RequestBody Carro carro) {
-
-        CarroDTO c = service.insert(carro);
+        AfDTO c = service.insert(af);
 
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
@@ -54,16 +61,14 @@ public class CarrosController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Carro carro) {
-
-        carro.setId(id);
-
-        CarroDTO c = service.update(carro, id);
-
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Af af) {
+        af.setId(id);
+        AfDTO c = service.update(af, id);
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {
