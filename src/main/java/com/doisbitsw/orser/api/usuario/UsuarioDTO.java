@@ -6,17 +6,18 @@ import org.modelmapper.ModelMapper;
 @Data
 public class UsuarioDTO {
     private Long id;
+    private Long localidade;
+    private Long entidade;
     private String nome;
+    private String cpf;
     private String email;
     private String login;
     private String senha;
-    private Long escola;
     private String nivel;
-    private String recuperar;
-    private String role;
-    private Boolean ativo;
+    private String endereco;
     private String created;
-    private String modified;
+    private String celular;
+    private Boolean isativo;
 
 
 

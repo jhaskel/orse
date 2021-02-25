@@ -51,11 +51,14 @@ public class UsuarioService {
         Optional<Usuario> optional = rep.findById(id);
         if(optional.isPresent()) {
             Usuario db = optional.get();
-
             db.setNome(usuario.getNome());
             db.setSenha(usuario.getSenha());
-
            db.setEmail(usuario.getEmail());
+           db.setNivel(usuario.getNivel());
+           db.setEndereco(usuario.getEndereco());
+           db.setCelular(usuario.getCelular());
+           db.setIsativo(usuario.getIsativo());
+           db.setLocalidade(usuario.getLocalidade());
 
 
 
