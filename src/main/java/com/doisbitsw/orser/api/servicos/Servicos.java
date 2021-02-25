@@ -20,6 +20,7 @@ public class Servicos {
     private String unidade;
     private Boolean ispago;
     private Boolean ismanual;
+    private Double valor;
     private Long entidade;
 
 

@@ -10,6 +10,7 @@ public class ServicosDTO {
     private String unidade;
     private Boolean ispago;
     private Boolean ismanual;
+    private Double valor;
     private Long entidade;
 
     public static ServicosDTO create(Servicos servicos) {
