@@ -1,4 +1,4 @@
-package com.doisbitsw.orser.api.af;
+package com.doisbitsw.orser.api.imagens;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,28 +11,14 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 @Entity
-public class Af {
+public class Imagens {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long code;
-    private Long fornecedor;
-    private String nomefornecedor;
-    private Long nivel;
-    private String nomenivel;
+    private Long protocolo;
     private String created;
-    private Boolean isautorizado;
-    private Boolean ativo;
-    private String status;
-    private String pedido;
-    private Double total;
-
-
-
-
-
-
+    private Boolean isprotocolo;
 
 
 

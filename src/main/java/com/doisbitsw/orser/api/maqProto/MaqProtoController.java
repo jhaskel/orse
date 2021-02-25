@@ -1,4 +1,4 @@
-package com.doisbitsw.orser.api.af;
+package com.doisbitsw.orser.api.maqProto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,15 +9,15 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/af")
-public class AfController {
+@RequestMapping("/api/v1/maqproto")
+public class MaqProtoController {
     @Autowired
-    private AfService service;
+    private MaqProtoService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<AfDTO> carros = service.getCarros();
+        List<MaqProtoDTO> carros = service.getCarros();
         return ResponseEntity.ok(carros);
     }
 
@@ -25,31 +25,17 @@ public class AfController {
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        AfDTO carro = service.getCarroById(id);
+        MaqProtoDTO carro = service.getCarroById(id);
 
         return ResponseEntity.ok(carro);
     }
 
-    @GetMapping("/fornecedor/{fornecedor}")
-    public ResponseEntity getByFornecedor(@PathVariable("fornecedor") Long fornecedor) {
-        List<AfDTO> carros = service.getByFornecedor(fornecedor);
-        return carros.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
-    }
-
-    @GetMapping("/af")
-    public long getAf() {
-        return service.getAf();
-    }
-
-
 
 
     @PostMapping
-    public ResponseEntity post(@RequestBody Af af) {
+    public ResponseEntity post(@RequestBody MaqProto maqProto) {
 
-        AfDTO c = service.insert(af);
+        MaqProtoDTO c = service.insert(maqProto);
 
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
@@ -61,9 +47,9 @@ public class AfController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Af af) {
-        af.setId(id);
-        AfDTO c = service.update(af, id);
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody MaqProto maqProto) {
+        maqProto.setId(id);
+        MaqProtoDTO c = service.update(maqProto, id);
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
