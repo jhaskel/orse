@@ -21,7 +21,7 @@ public class UserDTO {
     private String login;
     private String senha;
     private String nivel;
-    private String endereco;
+
     private String created;
     private String celular;
     private Boolean isativo;
