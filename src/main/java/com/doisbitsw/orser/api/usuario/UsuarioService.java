@@ -61,9 +61,6 @@ public class UsuarioService {
            db.setLocalidade(usuario.getLocalidade());
 
 
-
-
-
             System.out.println("Usuario id " + db.getId());
 
             // Atualiza o usuario
