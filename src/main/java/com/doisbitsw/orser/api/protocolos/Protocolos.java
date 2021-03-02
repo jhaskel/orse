@@ -38,6 +38,7 @@ public class Protocolos {
     private Boolean isfinalizado;
     private Boolean isativo;
     private Boolean ispago;
+    private Long ano;
 
 
 
