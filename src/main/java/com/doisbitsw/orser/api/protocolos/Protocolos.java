@@ -37,6 +37,8 @@ public class Protocolos {
     private Boolean isagendado;
     private Boolean isfinalizado;
     private Boolean isativo;
+    private Boolean ispago;
+
 
 
 

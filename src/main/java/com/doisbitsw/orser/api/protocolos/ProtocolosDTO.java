@@ -27,6 +27,7 @@ public class ProtocolosDTO {
     private Boolean isagendado;
     private Boolean isfinalizado;
     private Boolean isativo;
+    private Boolean ispago;
     public static ProtocolosDTO create(Protocolos protocolos) {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(protocolos, ProtocolosDTO.class);
