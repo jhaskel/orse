@@ -29,6 +29,8 @@ public class ProtocolosDTO {
     private Boolean isativo;
     private Boolean ispago;
     private Long ano;
+    private Long mes;
+    private String created;
     public static ProtocolosDTO create(Protocolos protocolos) {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(protocolos, ProtocolosDTO.class);
