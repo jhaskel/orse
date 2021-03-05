@@ -10,8 +10,8 @@ public interface ProtocolosRepository extends JpaRepository<Protocolos, Long> {
     @Query(value = "SELECT * FROM protocolos  ORDER BY id ", nativeQuery = true)
     List<Protocolos> findAll();
 
-    @Query(value = "SELECT *  FROM protocolos where isativo = true order by id desc ", nativeQuery = true)
-    List<Protocolos> findAtivo();
+    @Query(value = "SELECT *  FROM protocolos where isativo = true an entidade = :entidade and ano =:ano order by id desc ", nativeQuery = true)
+    List<Protocolos> findAtivo(Long entidade, Long ano);
 
 
 }

@@ -29,9 +29,9 @@ public class ProtocolosController {
         return ResponseEntity.ok(carro);
     }
 
-    @GetMapping("/ativo")
-    public ResponseEntity getAtivo() {
-        List<ProtocolosDTO> carros = service.getAtivo();
+    @GetMapping("/ativo/{entidade}/{ano}")
+    public ResponseEntity getAtivo(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano) {
+        List<ProtocolosDTO> carros = service.getAtivo(entidade,ano);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);

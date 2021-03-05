@@ -33,7 +33,7 @@ public class ProtocolosService {
         return ProtocolosDTO.create(rep.save(protocolos));
     }
 
-    public List<ProtocolosDTO> getAtivo() {
+    public List<ProtocolosDTO> getAtivo(Long entidade, Long anoo) {
         return rep.findAtivo().stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
 
