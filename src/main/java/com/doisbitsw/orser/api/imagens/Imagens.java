@@ -18,6 +18,7 @@ public class Imagens {
     private Long id;
     private Long protocolo;
     private String created;
+    private String imagem;
     private Boolean isprotocolo;
 
 
