@@ -46,6 +46,14 @@ public class ImagensController {
                 .buildAndExpand(id).toUri();
     }
 
+    @GetMapping("/protocolo/{protocolo}")
+    public ResponseEntity getProtocolo(@PathVariable("protocolo") Long protocolo) {
+        List<ImagensDTO> carros = service.getProtocolo(protocolo);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Imagens imagens) {
         imagens.setId(id);

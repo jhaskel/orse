@@ -8,8 +8,6 @@ public class ImagensDTO {
     private Long id;
     private Long protocolo;
     private String imagem;
-    private String created;
-
     private Boolean isprotocolo;
 
     public static ImagensDTO create(Imagens imagens) {

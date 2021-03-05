@@ -17,7 +17,6 @@ public class Imagens {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long protocolo;
-    private String created;
     private String imagem;
     private Boolean isprotocolo;
 

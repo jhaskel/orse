@@ -27,6 +27,10 @@ public class ImagensService {
         return carro.map(ImagensDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
+    public List<ImagensDTO> getProtocolo(Long protocolo) {
+        return rep.findProtocolo(protocolo).stream().map(ImagensDTO::create).collect(Collectors.toList());
+    }
+
 
     public ImagensDTO insert(Imagens imagens) {
         Assert.isNull(imagens.getId(),"Não foi possível inserir o registro");
@@ -42,7 +46,7 @@ public class ImagensService {
             Imagens db = optional.get();
             // Copiar as propriedades
             db.setProtocolo(imagens.getProtocolo());
-            db.setCreated(imagens.getCreated());
+            db.setImagem(imagens.getImagem());
             db.setIsprotocolo(imagens.getIsprotocolo());
             System.out.println("Af id " + db.getId());
 

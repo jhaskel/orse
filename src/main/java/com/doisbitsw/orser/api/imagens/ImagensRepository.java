@@ -10,5 +10,8 @@ public interface ImagensRepository extends JpaRepository<Imagens, Long> {
     @Query(value = "SELECT * FROM imagens  ORDER BY id desc", nativeQuery = true)
     List<Imagens> findAll();
 
+    @Query(value = "SELECT *  FROM imagens where protocolo = :protocolo ", nativeQuery = true)
+    List<Imagens> findProtocolo(Long protocolo);
+
 
 }
