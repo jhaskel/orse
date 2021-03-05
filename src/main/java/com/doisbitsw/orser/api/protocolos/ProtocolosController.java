@@ -26,17 +26,24 @@ public class ProtocolosController {
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
         ProtocolosDTO carro = service.getCarroById(id);
-
         return ResponseEntity.ok(carro);
     }
+
+    @GetMapping("/ativo")
+    public ResponseEntity getAtivo() {
+        List<ProtocolosDTO> carros = service.getAtivo();
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
+
 
 
 
     @PostMapping
     public ResponseEntity post(@RequestBody Protocolos protocolos) {
-
         ProtocolosDTO c = service.insert(protocolos);
-
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
     }

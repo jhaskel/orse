@@ -7,8 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ProtocolosRepository extends JpaRepository<Protocolos, Long> {
-    @Query(value = "SELECT * FROM protocolos  ORDER BY id desc", nativeQuery = true)
+    @Query(value = "SELECT * FROM protocolos  ORDER BY id ", nativeQuery = true)
     List<Protocolos> findAll();
+
+    @Query(value = "SELECT *  FROM protocolos where isativo = true WHERE id = :id ", nativeQuery = true)
+    List<Protocolos> findAtivo();
 
 
 }

@@ -33,6 +33,10 @@ public class ProtocolosService {
         return ProtocolosDTO.create(rep.save(protocolos));
     }
 
+    public List<ProtocolosDTO> getAtivo() {
+        return rep.findAtivo().stream().map(ProtocolosDTO::create).collect(Collectors.toList());
+    }
+
     public ProtocolosDTO update(Protocolos protocolos, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
