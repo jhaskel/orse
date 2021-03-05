@@ -33,8 +33,8 @@ public class ProtocolosService {
         return ProtocolosDTO.create(rep.save(protocolos));
     }
 
-    public List<ProtocolosDTO> getAtivo(Long entidade, Long anoo) {
-        return rep.findAtivo().stream().map(ProtocolosDTO::create).collect(Collectors.toList());
+    public List<ProtocolosDTO> getAtivo(Long entidade, Long ano) {
+        return rep.findAtivo(entidade,ano).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
 
     public ProtocolosDTO update(Protocolos protocolos, Long id) {
