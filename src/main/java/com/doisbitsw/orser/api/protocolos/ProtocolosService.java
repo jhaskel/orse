@@ -70,6 +70,7 @@ public class ProtocolosService {
             db.setIsfinalizado(protocolos.getIsfinalizado());
             db.setSetor(protocolos.getSetor());
             db.setStatus(protocolos.getStatus());
+            db.setModified(protocolos.getModified());
             System.out.println("Af id " + db.getId());
 
             // Atualiza o carro

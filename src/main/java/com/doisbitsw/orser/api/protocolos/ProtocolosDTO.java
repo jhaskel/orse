@@ -32,6 +32,7 @@ public class ProtocolosDTO {
     private Long mes;
     private String created;
     private String obs;
+    private String modified;
 
     public static ProtocolosDTO create(Protocolos protocolos) {
         ModelMapper modelMapper = new ModelMapper();

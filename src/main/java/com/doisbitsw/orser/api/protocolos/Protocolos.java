@@ -42,6 +42,7 @@ public class Protocolos {
     private Long mes;
     private String created;
     private String obs;
+    private String modified;
 
 
 
