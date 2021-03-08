@@ -47,6 +47,29 @@ public class ProtocolosService {
             // Copiar as propriedades
             db.setEntidade(protocolos.getEntidade());
             db.setContent(protocolos.getContent());
+            db.setAno(protocolos.getAno());
+            db.setAno(protocolos.getAno());
+            db.setCreated(protocolos.getCreated());
+            db.setDataAg(protocolos.getDataAg());
+            db.setDataFim(protocolos.getDataFim());
+            db.setHoraFim(protocolos.getHoraFim());
+            db.setDataIn(protocolos.getDataIn());
+            db.setHoraIn(protocolos.getHoraIn());
+            db.setIsagendado(protocolos.getIsagendado());
+            db.setIsativo(protocolos.getIsativo());
+            db.setIsuser(protocolos.getIsuser());
+            db.setIspago(protocolos.getIspago());
+            db.setObs(protocolos.getObs());
+            db.setMes(protocolos.getMes());
+            db.setLocalidade(protocolos.getLocalidade());
+            db.setNomeLocalidade(protocolos.getNomeLocalidade());
+            db.setUsuario(protocolos.getUsuario());
+            db.setNomeUsuario(protocolos.getNomeUsuario());
+            db.setServico(protocolos.getServico());
+            db.setNomeServico(protocolos.getNomeServico());
+            db.setIsfinalizado(protocolos.getIsfinalizado());
+            db.setSetor(protocolos.getSetor());
+            db.setStatus(protocolos.getStatus());
             System.out.println("Af id " + db.getId());
 
             // Atualiza o carro
