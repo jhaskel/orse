@@ -41,6 +41,7 @@ public class Protocolos {
     private Long ano;
     private Long mes;
     private String created;
+    private String obs;
 
 
 

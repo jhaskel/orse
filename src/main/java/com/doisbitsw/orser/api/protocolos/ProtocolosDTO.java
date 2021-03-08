@@ -31,6 +31,8 @@ public class ProtocolosDTO {
     private Long ano;
     private Long mes;
     private String created;
+    private String obs;
+
     public static ProtocolosDTO create(Protocolos protocolos) {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(protocolos, ProtocolosDTO.class);
