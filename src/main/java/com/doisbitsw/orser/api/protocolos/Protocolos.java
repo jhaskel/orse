@@ -28,11 +28,11 @@ public class Protocolos {
     private String content;
     private String endereco;
     private String dataAg;
-    private String horaAg;
+    private String periodoAg;
     private String dataIn;
-    private String horaIn;
+    private String periodoIn;
     private String dataFim;
-    private String horaFim;
+    private String periodoFim;
     private Boolean isuser;
     private Boolean isagendado;
     private Boolean isfinalizado;

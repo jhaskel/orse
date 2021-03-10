@@ -52,9 +52,10 @@ public class ProtocolosService {
             db.setCreated(protocolos.getCreated());
             db.setDataAg(protocolos.getDataAg());
             db.setDataFim(protocolos.getDataFim());
-            db.setHoraFim(protocolos.getHoraFim());
+            db.setPeriodoAg(protocolos.getPeriodoAg());
             db.setDataIn(protocolos.getDataIn());
-            db.setHoraIn(protocolos.getHoraIn());
+            db.setPeriodoFim(protocolos.getPeriodoFim());
+            db.setPeriodoIn(protocolos.getPeriodoIn());
             db.setIsagendado(protocolos.getIsagendado());
             db.setIsativo(protocolos.getIsativo());
             db.setIsuser(protocolos.getIsuser());
