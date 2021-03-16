@@ -20,9 +20,8 @@ public class Veiculos {
     private String nome;
     private String placa;
     private Long entidade;
-
-
-
+    private Boolean ismanutencao;
+    private Boolean isativo;
 
 }
 

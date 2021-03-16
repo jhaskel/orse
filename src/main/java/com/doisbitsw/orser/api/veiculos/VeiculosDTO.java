@@ -10,6 +10,8 @@ public class VeiculosDTO {
     private String nome;
     private String placa;
     private Long entidade;
+    private Boolean ismanutencao;
+    private Boolean isativo;
 
 
     public static VeiculosDTO create(Veiculos maquinas) {
