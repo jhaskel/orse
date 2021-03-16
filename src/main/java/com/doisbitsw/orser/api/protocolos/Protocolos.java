@@ -44,7 +44,7 @@ public class Protocolos {
     private String created;
     private String obs;
     private String modified;
-    private List<String> veiculos;
+    private String veiculos;
 
 
 
