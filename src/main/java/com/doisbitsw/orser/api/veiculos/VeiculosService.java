@@ -1,4 +1,4 @@
-package com.doisbitsw.orser.api.maquinas;
+package com.doisbitsw.orser.api.veiculos;
 
 import com.doisbitsw.orser.api.infra.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,46 +10,52 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class MaquinasService {
+public class VeiculosService {
 
     @Autowired
 
-    private MaquinasRepository rep;
-    public List<MaquinasDTO> getCarros() {
-        List<MaquinasDTO> list = rep.findAll().stream().map(MaquinasDTO::create).collect(Collectors.toList());
+    private VeiculosRepository rep;
+    public List<VeiculosDTO> getCarros() {
+        List<VeiculosDTO> list = rep.findAll().stream().map(VeiculosDTO::create).collect(Collectors.toList());
         return list;
     }
 
 
 
-    public MaquinasDTO getCarroById(Long id) {
-        Optional<Maquinas> carro = rep.findById(id);
-        return carro.map(MaquinasDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+    public VeiculosDTO getCarroById(Long id) {
+        Optional<Veiculos> carro = rep.findById(id);
+        return carro.map(VeiculosDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
 
-    public MaquinasDTO insert(Maquinas maquinas) {
+    public List<VeiculosDTO> getSetor(Long setor) {
+        return rep.findSetor(setor).stream().map(VeiculosDTO::create).collect(Collectors.toList());
+    }
+
+
+    public VeiculosDTO insert(Veiculos maquinas) {
         Assert.isNull(maquinas.getId(),"Não foi possível inserir o registro");
-        return MaquinasDTO.create(rep.save(maquinas));
+        return VeiculosDTO.create(rep.save(maquinas));
     }
 
-    public MaquinasDTO update(Maquinas maquinas, Long id) {
+    public VeiculosDTO update(Veiculos maquinas, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
         // Busca o carro no banco de dados
-        Optional<Maquinas> optional = rep.findById(id);
+        Optional<Veiculos> optional = rep.findById(id);
         if(optional.isPresent()) {
-            Maquinas db = optional.get();
+            Veiculos db = optional.get();
             // Copiar as propriedades
             db.setNome(maquinas.getNome());
             db.setEntidade(maquinas.getEntidade());
             db.setPlaca(maquinas.getPlaca());
+            db.setSetor(maquinas.getSetor());
             System.out.println("Af id " + db.getId());
 
             // Atualiza o carro
             rep.save(db);
 
-            return MaquinasDTO.create(db);
+            return VeiculosDTO.create(db);
         } else {
             return null;
             //throw new RuntimeException("Não foi possível atualizar o registro");

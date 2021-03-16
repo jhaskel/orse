@@ -1,4 +1,4 @@
-package com.doisbitsw.orser.api.maquinas;
+package com.doisbitsw.orser.api.veiculos;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,15 +9,15 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/maquinas")
-public class MaquinasController {
+@RequestMapping("/api/v1/veiculos")
+public class VeiculosController {
     @Autowired
-    private MaquinasService service;
+    private VeiculosService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<MaquinasDTO> carros = service.getCarros();
+        List<VeiculosDTO> carros = service.getCarros();
         return ResponseEntity.ok(carros);
     }
 
@@ -25,17 +25,25 @@ public class MaquinasController {
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        MaquinasDTO carro = service.getCarroById(id);
+        VeiculosDTO carro = service.getCarroById(id);
 
         return ResponseEntity.ok(carro);
+    }
+
+    @GetMapping("/ativo/{setor}")
+    public ResponseEntity getSetor(@PathVariable("setor") Long setor) {
+        List<VeiculosDTO> carros = service.getSetor(setor);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
     }
 
 
 
     @PostMapping
-    public ResponseEntity post(@RequestBody Maquinas maquinas) {
+    public ResponseEntity post(@RequestBody Veiculos maquinas) {
 
-        MaquinasDTO c = service.insert(maquinas);
+        VeiculosDTO c = service.insert(maquinas);
 
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
@@ -47,9 +55,9 @@ public class MaquinasController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Maquinas maquinas) {
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Veiculos maquinas) {
         maquinas.setId(id);
-        MaquinasDTO c = service.update(maquinas, id);
+        VeiculosDTO c = service.update(maquinas, id);
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
