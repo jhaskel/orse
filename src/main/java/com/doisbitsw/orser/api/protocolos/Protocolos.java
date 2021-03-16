@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
 
 @NoArgsConstructor
 @Data
@@ -43,7 +44,7 @@ public class Protocolos {
     private String created;
     private String obs;
     private String modified;
-    private String veiculos;
+    private List<String> veiculos;
 
 
 

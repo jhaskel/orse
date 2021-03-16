@@ -3,6 +3,8 @@ package com.doisbitsw.orser.api.protocolos;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 
+import java.util.List;
+
 @Data
 public class ProtocolosDTO {
     private Long id;
@@ -33,7 +35,7 @@ public class ProtocolosDTO {
     private String created;
     private String obs;
     private String modified;
-    private String veiculos;
+    private List<String> veiculos;
 
     public static ProtocolosDTO create(Protocolos protocolos) {
         ModelMapper modelMapper = new ModelMapper();
