@@ -38,6 +38,14 @@ public class VeiculosController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/id/{id}")
+    public ResponseEntity getById(@PathVariable("id") Long id) {
+        List<VeiculosDTO> carros = service.getById(id);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
 
 
     @PostMapping

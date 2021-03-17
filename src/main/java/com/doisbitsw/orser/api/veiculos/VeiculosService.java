@@ -33,6 +33,11 @@ public class VeiculosService {
     }
 
 
+    public List<VeiculosDTO> getById(Long id) {
+        return rep.findId(id).stream().map(VeiculosDTO::create).collect(Collectors.toList());
+    }
+
+
     public VeiculosDTO insert(Veiculos maquinas) {
         Assert.isNull(maquinas.getId(),"Não foi possível inserir o registro");
         return VeiculosDTO.create(rep.save(maquinas));
