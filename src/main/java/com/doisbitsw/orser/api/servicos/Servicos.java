@@ -22,6 +22,7 @@ public class Servicos {
     private Boolean ismanual;
     private Double valor;
     private Long entidade;
+    private Long setor;
 
 
 }

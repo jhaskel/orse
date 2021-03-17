@@ -12,6 +12,7 @@ public class ServicosDTO {
     private Boolean ismanual;
     private Double valor;
     private Long entidade;
+    private Long setor;
 
     public static ServicosDTO create(Servicos servicos) {
         ModelMapper modelMapper = new ModelMapper();
