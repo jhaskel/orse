@@ -41,7 +41,7 @@ public class Protocolos {
     private Boolean ispago;
     private Long ano;
     private Long mes;
-    private Long dia;
+
     private String created;
     private String obs;
     private String modified;
