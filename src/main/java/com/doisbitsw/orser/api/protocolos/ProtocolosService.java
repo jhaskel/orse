@@ -38,8 +38,8 @@ public class ProtocolosService {
     }
 
 
-    public List<ProtocolosDTO> getAgendado(Long entidade) {
-        return rep.findAgendado(entidade).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
+    public List<ProtocolosDTO> getAgendado(Long entidade, Long ano) {
+        return rep.findAgendado(entidade,ano).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
 
     public ProtocolosDTO update(Protocolos protocolos, Long id) {
