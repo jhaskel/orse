@@ -46,6 +46,7 @@ public class Protocolos {
     private String obs;
     private String modified;
     private String code;
+    private Long cod;
 
 
 
