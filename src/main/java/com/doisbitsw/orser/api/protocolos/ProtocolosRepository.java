@@ -16,5 +16,8 @@ public interface ProtocolosRepository extends JpaRepository<Protocolos, Long> {
     @Query(value = "SELECT *  FROM protocolos where entidade = :entidade and ano = :ano and isagendado = true  order by data_ag   ", nativeQuery = true)
     List<Protocolos> findAgendado(Long entidade,Long ano);
 
+    @Query(value = "SELECT dia FROM protocolos WHERE entidade = :entidade ", nativeQuery = true)
+    long findCode(Long entidade);
+
 
 }

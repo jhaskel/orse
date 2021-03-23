@@ -42,6 +42,10 @@ public class ProtocolosService {
         return rep.findAgendado(entidade,ano).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
 
+    public long getCode(Long entidade){
+        return rep.findCode(entidade);
+    }
+
     public ProtocolosDTO update(Protocolos protocolos, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
