@@ -32,7 +32,6 @@ public class ProtocolosDTO {
     private Boolean ispago;
     private Long ano;
     private Long mes;
-
     private String created;
     private String obs;
     private String modified;
