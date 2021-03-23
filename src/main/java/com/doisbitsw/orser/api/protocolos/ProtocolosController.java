@@ -44,7 +44,7 @@ public class ProtocolosController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
-    @GetMapping("/code")
+    @GetMapping("/code/{entidade}")
     public long getCode(@PathVariable("entidade") Long entidade) {
         return service.getCode(entidade);
     }
