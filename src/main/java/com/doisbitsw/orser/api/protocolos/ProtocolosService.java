@@ -42,9 +42,9 @@ public class ProtocolosService {
         return rep.findAgendado(entidade,ano).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
 
-   /* public long getCode(Long entidade){
+   public long getCode(Long entidade){
         return rep.findCode(entidade);
-    }*/
+    }
 
     public ProtocolosDTO update(Protocolos protocolos, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
@@ -56,7 +56,6 @@ public class ProtocolosService {
             // Copiar as propriedades
             db.setEntidade(protocolos.getEntidade());
             db.setContent(protocolos.getContent());
-            db.setAno(protocolos.getAno());
             db.setAno(protocolos.getAno());
             db.setCreated(protocolos.getCreated());
             db.setDataAg(protocolos.getDataAg());
@@ -82,7 +81,7 @@ public class ProtocolosService {
             db.setStatus(protocolos.getStatus());
             db.setModified(protocolos.getModified());
             db.setCode(protocolos.getCode());
-            db.setCod(protocolos.getCod());
+            db.setCodi(protocolos.getCodi());
 
             System.out.println("Af id " + db.getId());
 

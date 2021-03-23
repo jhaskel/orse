@@ -36,7 +36,7 @@ public class ProtocolosDTO {
     private String obs;
     private String modified;
     private String code;
-    private String cod;
+    private String codi;
 
     public static ProtocolosDTO create(Protocolos protocolos) {
         ModelMapper modelMapper = new ModelMapper();
