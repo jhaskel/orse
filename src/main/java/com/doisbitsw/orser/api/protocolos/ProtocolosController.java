@@ -44,6 +44,14 @@ public class ProtocolosController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
+    @GetMapping("/agendadoMes/{entidade}/{ano}/{mes}")
+    public ResponseEntity getAgendado(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano,@PathVariable("mes") Long mes) {
+        List<ProtocolosDTO> carros = service.getAgendadoMes(entidade,ano,mes);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
     @GetMapping("/code/{entidade}")
     public long getCode(@PathVariable("entidade") Long entidade) {
         return service.getCode(entidade);
