@@ -19,10 +19,10 @@ public interface ProtocolosRepository extends JpaRepository<Protocolos, Long> {
     @Query(value = "SELECT *  FROM protocolos where entidade = :entidade and ano = :ano and isagendado = true and mes = :mes order by data_ag   ", nativeQuery = true)
     List<Protocolos> findAgendadoMes(Long entidade,Long ano,Long mes);
 
-    @Query(value = "SELECT pro.*,SUM(id) AS tot FROM protocolos pro\n" +
-            " where pro.entidade = :entidade and pro.ano = :ano \n" +
-            " GROUP BY pro.mes\n" +
-            " ORDER BY pro.mes desc", nativeQuery = true)
+    @Query(value = "SELECT ite.*,sum(ite.mes) AS tot, FROM protocolos ite \\n\" +\n" +
+            "            \" WHERE ite.ano = :ano and ite.entidade = :entidade \\n\" +\n" +
+            "            \" GROUP BY ite.mes \\n\" +\n" +
+            "            \" ORDER BY tot desc", nativeQuery = true)
     List<Protocolos> findQuantProtocolos(Long entidade,Long ano);
 
     @Query(value = "SELECT codi FROM protocolos WHERE entidade = :entidade ORDER BY codi DESC LIMIT 1 ", nativeQuery = true)
