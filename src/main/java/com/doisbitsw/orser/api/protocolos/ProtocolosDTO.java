@@ -38,6 +38,10 @@ public class ProtocolosDTO {
     private String code;
     private String codi;
 
+    private Long tot;
+
+
+
     public static ProtocolosDTO create(Protocolos protocolos) {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(protocolos, ProtocolosDTO.class);

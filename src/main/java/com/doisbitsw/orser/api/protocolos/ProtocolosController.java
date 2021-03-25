@@ -52,6 +52,16 @@ public class ProtocolosController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/quantProtocolos/{entidade}/{ano}")
+    public ResponseEntity getQuantProtocolos(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano) {
+        List<ProtocolosDTO> carros = service.getQuantProtocolos(entidade,ano);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
+
+
     @GetMapping("/code/{entidade}")
     public long getCode(@PathVariable("entidade") Long entidade) {
         return service.getCode(entidade);
