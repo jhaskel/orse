@@ -38,6 +38,14 @@ public class MaqProtoController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/busca/{protocolo}/")
+    public ResponseEntity getBuscaProtocolo(@PathVariable("protocolo") Long escola) {
+        List<MaqProtoDTO> carros = service.getBuscaProtocolo(escola);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
 
 
 

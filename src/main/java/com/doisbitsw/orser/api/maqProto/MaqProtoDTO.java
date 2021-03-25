@@ -9,6 +9,9 @@ public class MaqProtoDTO {
     private Long protocolo;
     private Long maquina;
 
+    private String nomeVei;
+    private String placaVei;
+
 
     public static MaqProtoDTO create(MaqProto maqProto) {
         ModelMapper modelMapper = new ModelMapper();

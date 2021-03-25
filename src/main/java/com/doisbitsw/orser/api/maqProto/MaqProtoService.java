@@ -32,6 +32,9 @@ public class MaqProtoService {
         return rep.findProtocolo(protocolo).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
     }
 
+    public List<MaqProtoDTO> getBuscaProtocolo(Long protocolo) {
+        return rep.findBuscaProtocolo(protocolo).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
+    }
 
     public MaqProtoDTO insert(MaqProto maqProto) {
         Assert.isNull(maqProto.getId(),"Não foi possível inserir o registro");
