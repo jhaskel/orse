@@ -46,9 +46,6 @@ public class MaqProtoController {
                 ResponseEntity.ok(carros);
     }
 
-
-
-
     @PostMapping
     public ResponseEntity post(@RequestBody MaqProto maqProto) {
 

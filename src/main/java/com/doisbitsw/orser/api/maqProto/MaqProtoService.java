@@ -27,7 +27,6 @@ public class MaqProtoService {
         return carro.map(MaqProtoDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
-
     public List<MaqProtoDTO> getProtocolo(Long protocolo) {
         return rep.findProtocolo(protocolo).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
     }
