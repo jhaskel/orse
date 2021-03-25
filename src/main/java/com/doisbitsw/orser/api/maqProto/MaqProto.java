@@ -19,6 +19,8 @@ public class MaqProto {
     private Long protocolo;
     private Long maquina;
 
+    private String nomeVei;
+
 
 
 
