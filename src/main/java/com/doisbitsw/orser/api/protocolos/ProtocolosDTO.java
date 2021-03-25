@@ -38,7 +38,7 @@ public class ProtocolosDTO {
     private String code;
     private String codi;
 
-    private Long tot;
+    private Double tot;
 
 
 
