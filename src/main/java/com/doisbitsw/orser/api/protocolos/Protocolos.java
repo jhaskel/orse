@@ -46,7 +46,9 @@ public class Protocolos {
     private String modified;
     private String code;
     private Long codi;
-    private Double tot;
+
+
+    //private Double tot;
 
 
 
