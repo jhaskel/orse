@@ -27,11 +27,17 @@ public class ServicosService {
         return carro.map(ServicosDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
+    public List<ServicosDTO> getAlgo(Long entidade) {
+        return rep.findAlgo(entidade).stream().map(ServicosDTO::create).collect(Collectors.toList());
+    }
+
 
     public ServicosDTO insert(Servicos servicos) {
         Assert.isNull(servicos.getId(),"Não foi possível inserir o registro");
         return ServicosDTO.create(rep.save(servicos));
     }
+
+
 
     public ServicosDTO update(Servicos servicos, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");

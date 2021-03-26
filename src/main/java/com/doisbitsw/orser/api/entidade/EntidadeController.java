@@ -32,6 +32,7 @@ public class EntidadeController {
 
 
 
+
     @PostMapping
     public ResponseEntity post(@RequestBody Entidade entidade) {
 
@@ -54,6 +55,7 @@ public class EntidadeController {
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
     }
+
 
 
     @DeleteMapping("/{id}")

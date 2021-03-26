@@ -10,4 +10,8 @@ public interface ServicosRepository extends JpaRepository<Servicos, Long> {
     @Query(value = "SELECT * FROM servicos  ORDER BY id desc", nativeQuery = true)
     List<Servicos> findAll();
 
+    @Query(value = "SELECT *  FROM servicos where entidade = :entidade ", nativeQuery = true)
+    List<Servicos> findAlgo(Long entidade);
+
+
 }
