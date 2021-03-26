@@ -53,6 +53,7 @@ public class ServicosService {
             db.setIsmanual(servicos.getIsmanual());
             db.setIspago(servicos.getIspago());
             db.setValor(servicos.getValor());
+            db.setSetor(servicos.getSetor());
 
             System.out.println("Af id " + db.getId());
 

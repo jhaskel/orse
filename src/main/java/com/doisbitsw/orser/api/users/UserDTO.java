@@ -25,6 +25,7 @@ public class UserDTO {
     private String created;
     private String celular;
     private Boolean isativo;
+    private Long setor;
     // token jwt
     private String token;
     private List<String> roles;

@@ -18,6 +18,7 @@ public class UsuarioDTO {
     private String created;
     private String celular;
     private Boolean isativo;
+    private Long setor;
 
 
 

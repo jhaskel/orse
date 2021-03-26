@@ -27,6 +27,7 @@ public class Usuario {
     private String created;
     private String celular;
     private Boolean isativo;
+    private Long setor;
 
 
 
