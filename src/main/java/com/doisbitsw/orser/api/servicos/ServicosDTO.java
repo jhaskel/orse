@@ -14,6 +14,8 @@ public class ServicosDTO {
     private Long entidade;
     private Long setor;
 
+    private Long quant;
+
     public static ServicosDTO create(Servicos servicos) {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(servicos, ServicosDTO.class);
