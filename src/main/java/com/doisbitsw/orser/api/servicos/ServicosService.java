@@ -27,8 +27,8 @@ public class ServicosService {
         return carro.map(ServicosDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
-    public List<ServicosDTO> getAlgo(Long entidade) {
-        return rep.findAlgo(entidade).stream().map(ServicosDTO::create).collect(Collectors.toList());
+    public List<ServicosDTO> getEntidadeSetor(Long entidade,Long setor) {
+        return rep.findEntidadeSetor(entidade,setor).stream().map(ServicosDTO::create).collect(Collectors.toList());
     }
 
 
