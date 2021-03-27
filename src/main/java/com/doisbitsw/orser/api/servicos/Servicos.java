@@ -24,6 +24,8 @@ public class Servicos {
     private Long entidade;
     private Long setor;
 
+    private Long quant;
+
 
 }
 
