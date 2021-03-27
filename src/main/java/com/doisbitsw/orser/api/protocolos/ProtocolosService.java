@@ -33,17 +33,17 @@ public class ProtocolosService {
         return ProtocolosDTO.create(rep.save(protocolos));
     }
 
-    public List<ProtocolosDTO> getAtivo(Long entidade, Long ano) {
-        return rep.findAtivo(entidade,ano).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
+    public List<ProtocolosDTO> getAtivo(Long entidade, Long ano,Long setor) {
+        return rep.findAtivo(entidade,ano,setor).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
 
 
-    public List<ProtocolosDTO> getAgendado(Long entidade, Long ano) {
-        return rep.findAgendado(entidade,ano).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
+    public List<ProtocolosDTO> getAgendado(Long entidade, Long ano,Long setor) {
+        return rep.findAgendado(entidade,ano,setor).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
 
-    public List<ProtocolosDTO> getAgendadoMes(Long entidade, Long ano,Long mes) {
-        return rep.findAgendadoMes(entidade,ano,mes).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
+    public List<ProtocolosDTO> getAgendadoMes(Long entidade, Long ano,Long mes,Long setor) {
+        return rep.findAgendadoMes(entidade,ano,mes,setor).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
 
 

@@ -29,39 +29,33 @@ public class ProtocolosController {
         return ResponseEntity.ok(carro);
     }
 
-    @GetMapping("/ativo/{entidade}/{ano}")
-    public ResponseEntity getAtivo(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano) {
-        List<ProtocolosDTO> carros = service.getAtivo(entidade,ano);
+    @GetMapping("/ativo/{entidade}/{ano}/{setor}")
+    public ResponseEntity getAtivo(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long setor,@PathVariable("setor") Long ano) {
+        List<ProtocolosDTO> carros = service.getAtivo(entidade,ano,setor);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
 
-    @GetMapping("/agendado/{entidade}/{ano}")
-    public ResponseEntity getAgendado(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano) {
-        List<ProtocolosDTO> carros = service.getAgendado(entidade,ano);
+    @GetMapping("/agendado/{entidade}/{ano}/{setor}")
+    public ResponseEntity getAgendado(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano,@PathVariable("setor") Long setor) {
+        List<ProtocolosDTO> carros = service.getAgendado(entidade,ano,setor);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
-    @GetMapping("/agendadoMes/{entidade}/{ano}/{mes}")
-    public ResponseEntity getAgendado(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano,@PathVariable("mes") Long mes) {
-        List<ProtocolosDTO> carros = service.getAgendadoMes(entidade,ano,mes);
+    @GetMapping("/agendadoMes/{entidade}/{ano}/{mes}/{setor}")
+    public ResponseEntity getAgendado(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano,@PathVariable("mes") Long mes,@PathVariable("setor") Long setor) {
+        List<ProtocolosDTO> carros = service.getAgendadoMes(entidade,ano,mes,setor);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
-
-
-
 
     @GetMapping("/code/{entidade}")
     public long getCode(@PathVariable("entidade") Long entidade) {
         return service.getCode(entidade);
     }
-
-
-
 
 
     @PostMapping
