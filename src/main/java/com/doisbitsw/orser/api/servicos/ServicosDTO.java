@@ -15,6 +15,7 @@ public class ServicosDTO {
     private Long setor;
 
     private Long quant;
+    private String nomeCidade;
 
     public static ServicosDTO create(Servicos servicos) {
         ModelMapper modelMapper = new ModelMapper();

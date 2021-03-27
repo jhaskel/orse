@@ -10,7 +10,7 @@ public interface ServicosRepository extends JpaRepository<Servicos, Long> {
     @Query(value = "SELECT * FROM servicos  ORDER BY id desc", nativeQuery = true)
     List<Servicos> findAll();
 
-    @Query(value = "SELECT *,count(ser.id) as quant  FROM servicos ser\n" +
+    @Query(value = "SELECT *,count(ser.id) as quant,ent.cidade AS nomeCidadeFROM servicos ser\n" +
             "INNER JOIN entidade ent ON ent.id = ser.entidade\n" +
             " where ser.entidade = 1 ", nativeQuery = true)
     List<Servicos> findAlgo(Long entidade);
