@@ -25,7 +25,7 @@ public class Servicos {
     private Long setor;
 
     private Long quant;
-
+    private String nomec;
 
 
 }
