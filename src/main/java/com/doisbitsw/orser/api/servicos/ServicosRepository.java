@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ServicosRepository extends JpaRepository<Servicos, Long> {
-    @Query(value = "SELECT ser.*, ser.nome as nomeCidade FROM servicos ser  ORDER BY ser.id desc", nativeQuery = true)
+    @Query(value = "SELECT ser.*, ser.nome as nomec FROM servicos ser  ORDER BY ser.id desc", nativeQuery = true)
     List<Servicos> findAll();
 
     @Query(value = "SELECT ser.*,count(ser.id) as quant, ent.cidade AS nomec FROM servicos ser\n" +
