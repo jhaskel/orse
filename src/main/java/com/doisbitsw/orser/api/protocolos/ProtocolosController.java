@@ -30,7 +30,7 @@ public class ProtocolosController {
     }
 
     @GetMapping("/ativo/{entidade}/{ano}/{setor}")
-    public ResponseEntity getAtivo(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long setor,@PathVariable("setor") Long ano) {
+    public ResponseEntity getAtivo(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano,@PathVariable("setor") Long setor) {
         List<ProtocolosDTO> carros = service.getAtivo(entidade,ano,setor);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
