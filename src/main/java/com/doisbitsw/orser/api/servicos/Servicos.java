@@ -24,8 +24,8 @@ public class Servicos {
     private Long entidade;
     private Long setor;
 
-    private Long quant;
-    private String nomec;
+//    private Long quant;
+  //  private String nomec;
 
 
 }
