@@ -29,6 +29,13 @@ public class SetorController {
 
         return ResponseEntity.ok(carro);
     }
+    @GetMapping("/id/{id}")
+    public ResponseEntity getId(@PathVariable("id") Long id) {
+        List<SetorDTO> carros = service.getId(id);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
 
 
 
