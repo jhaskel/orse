@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface SetorRepository extends JpaRepository<Setor, Long> {
-    @Query(value = "SELECT * FROM setor  ORDER BY id desc", nativeQuery = true)
+    @Query(value = "SELECT * FROM setor", nativeQuery = true)
     List<Setor> findAll();
 
     @Query(value = "SELECT *  FROM setor where id = :id", nativeQuery = true)
