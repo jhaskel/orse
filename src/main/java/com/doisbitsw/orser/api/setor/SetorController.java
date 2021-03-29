@@ -29,9 +29,18 @@ public class SetorController {
 
         return ResponseEntity.ok(carro);
     }
-    @GetMapping("/id/{id}")
-    public ResponseEntity getId(@PathVariable("id") Long id) {
-        List<SetorDTO> carros = service.getId(id);
+
+    @GetMapping("/entidade/{entidade}")
+    public ResponseEntity getEntidade(@PathVariable("entidade") Long entidade) {
+        List<SetorDTO> carros = service.getEntidade(entidade);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
+    @GetMapping("/id/{entidade}/{id}")
+    public ResponseEntity getId(@PathVariable("entidade") Long entidade,@PathVariable("id") Long id) {
+        List<SetorDTO> carros = service.getId(entidade,id);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);

@@ -27,10 +27,13 @@ public class SetorService {
         return carro.map(SetorDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
-    public List<SetorDTO> getId(Long id) {
-        return rep.findId(id).stream().map(SetorDTO::create).collect(Collectors.toList());
+    public List<SetorDTO> getEntidade(Long entidade) {
+        return rep.findEntidade(entidade).stream().map(SetorDTO::create).collect(Collectors.toList());
     }
 
+    public List<SetorDTO> getId(Long entidade,Long id) {
+        return rep.findId(entidade,id).stream().map(SetorDTO::create).collect(Collectors.toList());
+    }
 
     public SetorDTO insert(Setor setor) {
         Assert.isNull(setor.getId(),"Não foi possível inserir o registro");
