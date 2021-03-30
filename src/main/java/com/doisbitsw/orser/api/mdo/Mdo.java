@@ -1,4 +1,4 @@
-package com.doisbitsw.orser.api.veiculos;
+package com.doisbitsw.orser.api.mdo;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 @Entity
-public class Veiculos {
+public class Mdo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,9 +19,9 @@ public class Veiculos {
     private Long entidade;
     private Long setor;
     private String nome;
-    private String placa;
-    private Boolean ismanutencao;
+    private String cargo;
     private Boolean isativo;
+    private Boolean isdisponivel;
 
 }
 
