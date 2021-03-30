@@ -47,7 +47,6 @@ public class VeiculosController {
     }
 
 
-
     @PostMapping
     public ResponseEntity post(@RequestBody Veiculos maquinas) {
 
