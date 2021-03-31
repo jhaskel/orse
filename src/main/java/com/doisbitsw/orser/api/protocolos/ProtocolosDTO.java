@@ -30,6 +30,7 @@ public class ProtocolosDTO {
     private Boolean isfinalizado;
     private Boolean isativo;
     private Boolean ispago;
+
     private Long ano;
     private Long mes;
     private String created;

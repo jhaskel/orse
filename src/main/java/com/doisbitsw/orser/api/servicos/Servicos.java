@@ -23,6 +23,7 @@ public class Servicos {
     private Double valor;
     private Long entidade;
     private Long setor;
+    private Boolean ispublico;
 
 //    private Long quant;
   //  private String nomec;

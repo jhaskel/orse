@@ -54,6 +54,7 @@ public class ServicosService {
             db.setIspago(servicos.getIspago());
             db.setValor(servicos.getValor());
             db.setSetor(servicos.getSetor());
+            db.setIspublico(servicos.getIspublico());
 
             System.out.println("Af id " + db.getId());
 
