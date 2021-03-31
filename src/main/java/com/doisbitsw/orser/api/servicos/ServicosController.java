@@ -38,6 +38,15 @@ public class ServicosController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/publicos/{entidade}")
+    public ResponseEntity getPublico(@PathVariable("entidade") Long entidade) {
+        List<ServicosDTO> carros = service.getPublico(entidade);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
+
 
 
 

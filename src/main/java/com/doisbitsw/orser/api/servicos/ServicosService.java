@@ -31,6 +31,10 @@ public class ServicosService {
         return rep.findEntidadeSetor(entidade,setor).stream().map(ServicosDTO::create).collect(Collectors.toList());
     }
 
+    public List<ServicosDTO> getPublico(Long entidade) {
+        return rep.findPublico(entidade).stream().map(ServicosDTO::create).collect(Collectors.toList());
+    }
+
 
     public ServicosDTO insert(Servicos servicos) {
         Assert.isNull(servicos.getId(),"Não foi possível inserir o registro");
