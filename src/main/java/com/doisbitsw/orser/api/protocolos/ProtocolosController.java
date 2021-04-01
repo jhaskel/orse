@@ -51,7 +51,7 @@ public class ProtocolosController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
-    @GetMapping("/user/{entidade}/${usuario}")
+    @GetMapping("/user/{entidade}/{usuario}")
     public ResponseEntity getUser(@PathVariable("entidade") Long entidade,@PathVariable("usuario") Long usuario) {
         List<ProtocolosDTO> carros = service.getUser(entidade,usuario);
         return carros.isEmpty() ?
