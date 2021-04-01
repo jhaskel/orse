@@ -46,6 +46,10 @@ public class ProtocolosService {
         return rep.findAgendadoMes(entidade,ano,mes,setor).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
 
+    public List<ProtocolosDTO> getUser(Long entidade,Long usuario) {
+        return rep.findUser(entidade,usuario).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
+    }
+
 
 
     public long getCode(Long entidade){
