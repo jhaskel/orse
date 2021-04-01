@@ -33,6 +33,7 @@ public class ProtocolosDTO {
 
     private Long ano;
     private Long mes;
+    private Long mesAg;
     private String created;
     private String obs;
     private String modified;
