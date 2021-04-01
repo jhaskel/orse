@@ -92,6 +92,7 @@ public class ProtocolosService {
             db.setModified(protocolos.getModified());
             db.setCode(protocolos.getCode());
             db.setCodi(protocolos.getCodi());
+            db.setMesAg(protocolos.getMesAg());
 
             System.out.println("Af id " + db.getId());
 
