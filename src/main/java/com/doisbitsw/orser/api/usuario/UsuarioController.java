@@ -52,6 +52,16 @@ public class UsuarioController {
 
 
 
+    @GetMapping("/entidade/{entidade}")
+    public ResponseEntity getEntidade(@PathVariable("entidade") Long entidade) {
+        List<UsuarioDTO> coletando = service.getEntidade(entidade);
+        return coletando.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(coletando);
+    }
+
+
+
     @GetMapping("/quantnoticia/{usuario}")
     public double QuantNoticia(@PathVariable("usuario") Long usuario) {
         return service.QuantNoticia(usuario);

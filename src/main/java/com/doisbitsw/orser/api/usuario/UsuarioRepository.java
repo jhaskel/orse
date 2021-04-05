@@ -29,6 +29,11 @@ public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
     @Query(value = "SELECT  count(id)  FROM user WHERE  email = :email", nativeQuery = true)
     Long QuantEmail(String email);
 
+    @Query(value = "SELECT * FROM user WHERE  entidade = :entidade order by nome ", nativeQuery = true)
+    List<Usuario> findEntidade(Long entidade);
+
+
+
 
 
 }
