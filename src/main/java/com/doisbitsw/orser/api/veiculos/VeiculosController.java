@@ -38,6 +38,14 @@ public class VeiculosController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/entidade/{entidade}/{setor}")
+    public ResponseEntity getEntidade(@PathVariable("entidade") Long entidade,@PathVariable("setor") Long setor) {
+        List<VeiculosDTO> carros = service.getEntidade(entidade,setor);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
     @GetMapping("/id/{id}")
     public ResponseEntity getById(@PathVariable("id") Long id) {
         List<VeiculosDTO> carros = service.getById(id);
