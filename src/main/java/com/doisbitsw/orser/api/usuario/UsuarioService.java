@@ -62,6 +62,7 @@ public class UsuarioService {
             db.setSenha(usuario.getSenha());
            db.setEmail(usuario.getEmail());
            db.setNivel(usuario.getNivel());
+           db.setCpf(usuario.getCpf());
 
            db.setCelular(usuario.getCelular());
            db.setIsativo(usuario.getIsativo());
