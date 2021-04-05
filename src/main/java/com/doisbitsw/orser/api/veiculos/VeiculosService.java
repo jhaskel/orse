@@ -55,6 +55,8 @@ public class VeiculosService {
             db.setEntidade(maquinas.getEntidade());
             db.setPlaca(maquinas.getPlaca());
             db.setSetor(maquinas.getSetor());
+            db.setIsativo(maquinas.getIsativo());
+            db.setIsmanutencao(maquinas.getIsmanutencao());
             System.out.println("Af id " + db.getId());
 
             // Atualiza o carro
