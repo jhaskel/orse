@@ -36,6 +36,11 @@ public class MdoService {
     }
 
 
+    public List<MdoDTO> getEntidade(Long entidade,Long setor) {
+        return rep.findEntidade(entidade,setor).stream().map(MdoDTO::create).collect(Collectors.toList());
+    }
+
+
     public MdoDTO insert(Mdo maquinas) {
         Assert.isNull(maquinas.getId(),"Não foi possível inserir o registro");
         return MdoDTO.create(rep.save(maquinas));
