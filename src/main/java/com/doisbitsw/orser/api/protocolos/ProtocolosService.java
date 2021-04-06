@@ -21,7 +21,6 @@ public class ProtocolosService {
     }
 
 
-
     public ProtocolosDTO getCarroById(Long id) {
         Optional<Protocolos> carro = rep.findById(id);
         return carro.map(ProtocolosDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
@@ -55,6 +54,7 @@ public class ProtocolosService {
     public long getCode(Long entidade){
         return rep.findCode(entidade);
     }
+
 
     public ProtocolosDTO update(Protocolos protocolos, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");

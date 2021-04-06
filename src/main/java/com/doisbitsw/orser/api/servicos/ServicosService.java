@@ -40,6 +40,10 @@ public class ServicosService {
         return ServicosDTO.create(rep.save(servicos));
     }
 
+    public boolean getTipo(Long id){
+        return rep.findTipo(id);
+    }
+
 
 
     public ServicosDTO update(Servicos servicos, Long id) {

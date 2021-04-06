@@ -46,6 +46,12 @@ public class ServicosController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/tipo/{id}")
+    public Boolean getTipo(@PathVariable("id") Long id) {
+        return service.getTipo(id);
+    }
+
+
 
 
 

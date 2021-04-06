@@ -22,6 +22,8 @@ public interface ServicosRepository extends JpaRepository<Servicos, Long> {
     @Query(value = "SELECT * FROM servicos where entidade = :entidade and ispublic = true ORDER BY id desc ", nativeQuery = true)
     List<Servicos> findPublico(Long entidade);
 
+    @Query(value = "SELECT ismanual FROM servicos WHERE id = :id ", nativeQuery = true)
+    boolean findTipo(Long id);
 
 
 
