@@ -51,7 +51,7 @@ public class Protocolos {
     private Long codi;
 
 
-    private Long quant;
+    public Long quant;
 
 
     //private Double tot;
