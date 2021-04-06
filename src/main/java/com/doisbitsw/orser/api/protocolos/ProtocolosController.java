@@ -21,8 +21,6 @@ public class ProtocolosController {
         return ResponseEntity.ok(carros);
     }
 
-
-
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
         ProtocolosDTO carro = service.getCarroById(id);
@@ -44,6 +42,7 @@ public class ProtocolosController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
+
     @GetMapping("/agendadoMes/{entidade}/{ano}/{mes}/{setor}")
     public ResponseEntity getAgendado(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano,@PathVariable("mes") Long mes,@PathVariable("setor") Long setor) {
         List<ProtocolosDTO> carros = service.getAgendadoMes(entidade,ano,mes,setor);
@@ -51,6 +50,7 @@ public class ProtocolosController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
+
     @GetMapping("/user/{entidade}/{usuario}")
     public ResponseEntity getUser(@PathVariable("entidade") Long entidade,@PathVariable("usuario") Long usuario) {
         List<ProtocolosDTO> carros = service.getUser(entidade,usuario);
@@ -58,8 +58,6 @@ public class ProtocolosController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
-
-
 
     @GetMapping("/code/{entidade}")
     public long getCode(@PathVariable("entidade") Long entidade) {
