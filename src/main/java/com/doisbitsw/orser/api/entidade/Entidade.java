@@ -21,6 +21,7 @@ public class Entidade {
     private String  imagem;
     private String  prefeito;
     private String  sigla;
+    private Boolean  isAtivo;
 
 
 
