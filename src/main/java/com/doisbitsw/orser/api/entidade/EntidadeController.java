@@ -30,6 +30,14 @@ public class EntidadeController {
         return ResponseEntity.ok(carro);
     }
 
+    @GetMapping("/entidade/{entidade}")
+    public ResponseEntity getEntidade(@PathVariable("entidade") Long entidade) {
+        List<EntidadeDTO> carros = service.getEntidade(entidade);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
 
 
 
