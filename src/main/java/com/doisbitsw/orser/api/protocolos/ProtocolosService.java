@@ -50,6 +50,12 @@ public class ProtocolosService {
     }
 
 
+    public List<ProtocolosDTO> getRelatorioLocalidade(Long entidade,Long ano) {
+        return rep.findRelatorioLocalidade(entidade,ano).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
+    }
+
+
+
 
     public long getCode(Long entidade){
         return rep.findCode(entidade);

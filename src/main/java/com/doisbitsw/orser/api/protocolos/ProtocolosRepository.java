@@ -23,6 +23,11 @@ public interface ProtocolosRepository extends JpaRepository<Protocolos, Long> {
     List<Protocolos> findUser(Long entidade,Long usuario);
 
 
+    @Query(value = "SELECT *, COUNT(id) AS quant FROM protocolos  WHERE entidade = :entidade and isagendado = TRUE and ano = :ano group BY localidade ORDER BY quant desc  ", nativeQuery = true)
+    List<Protocolos> findRelatorioLocalidade(Long entidade,Long ano);
+
+
+
     @Query(value = "SELECT codi FROM protocolos WHERE entidade = :entidade ORDER BY codi DESC LIMIT 1 ", nativeQuery = true)
     long findCode(Long entidade);
 
