@@ -39,8 +39,6 @@ public class EntidadeController {
     }
 
 
-
-
     @PostMapping
     public ResponseEntity post(@RequestBody Entidade entidade) {
 

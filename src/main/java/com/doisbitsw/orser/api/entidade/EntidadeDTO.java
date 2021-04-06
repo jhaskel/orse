@@ -11,7 +11,7 @@ public class EntidadeDTO {
     private String  imagem;
     private String  prefeito;
     private String  sigla;
-    private Boolean  isAtivo;
+    private Boolean  isativo;
 
     public static EntidadeDTO create(Entidade entidade) {
         ModelMapper modelMapper = new ModelMapper();
