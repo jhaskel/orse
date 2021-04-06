@@ -27,8 +27,8 @@ public class EntidadeService {
         return carro.map(EntidadeDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
-    public List<EntidadeDTO> getEntidade(Long entidade) {
-        return rep.findEntidade(entidade).stream().map(EntidadeDTO::create).collect(Collectors.toList());
+    public List<EntidadeDTO> getEntidade(Long id) {
+        return rep.findEntidade(id).stream().map(EntidadeDTO::create).collect(Collectors.toList());
     }
 
 

@@ -10,8 +10,8 @@ public interface EntidadeRepository extends JpaRepository<Entidade, Long> {
     @Query(value = "SELECT * FROM entidade  ORDER BY id desc", nativeQuery = true)
     List<Entidade> findAll();
 
-    @Query(value = "SELECT * FROM entidade where entidade = :entidade", nativeQuery = true)
-    List<Entidade> findEntidade(Long entidade,);
+    @Query(value = "SELECT * FROM entidade where entidade = :id", nativeQuery = true)
+    List<Entidade> findEntidade(Long id);
 
 
 }
