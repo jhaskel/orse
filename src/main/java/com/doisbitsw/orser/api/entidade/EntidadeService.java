@@ -44,6 +44,8 @@ public class EntidadeService {
             db.setNome(entidade.getNome());
             db.setCidade(entidade.getCidade());
             db.setImagem(entidade.getImagem());
+            db.setPrefeito(entidade.getPrefeito());
+            db.setSigla(entidade.getSigla());
             System.out.println("Af id " + db.getId());
 
             // Atualiza o carro

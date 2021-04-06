@@ -19,6 +19,10 @@ public class Entidade {
     private String nome;
     private String  cidade;
     private String  imagem;
+    private String  prefeito;
+    private String  sigla;
+
+
 
 
 

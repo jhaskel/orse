@@ -9,6 +9,8 @@ public class EntidadeDTO {
     private String nome;
     private String  cidade;
     private String  imagem;
+    private String  prefeito;
+    private String  sigla;
 
     public static EntidadeDTO create(Entidade entidade) {
         ModelMapper modelMapper = new ModelMapper();
