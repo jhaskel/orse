@@ -6,12 +6,13 @@ import org.modelmapper.ModelMapper;
 @Data
 public class VeiculosDTO {
     private Long id;
+    private Long entidade;
     private Long setor;
     private String nome;
-    private String placa;
-    private Long entidade;
-    private Boolean ismanutencao;
+    private String identificador;
+    private Boolean isdisponivel;
     private Boolean isativo;
+    private Boolean isveiculo;
 
 
     public static VeiculosDTO create(Veiculos maquinas) {

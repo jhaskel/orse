@@ -58,10 +58,11 @@ public class VeiculosService {
             // Copiar as propriedades
             db.setNome(maquinas.getNome());
             db.setEntidade(maquinas.getEntidade());
-            db.setPlaca(maquinas.getPlaca());
+            db.setIdentificador(maquinas.getIdentificador());
             db.setSetor(maquinas.getSetor());
             db.setIsativo(maquinas.getIsativo());
-            db.setIsmanutencao(maquinas.getIsmanutencao());
+            db.setIsdisponivel(maquinas.getIsdisponivel());
+            db.setIsveiculo(maquinas.getIsveiculo());
             System.out.println("Af id " + db.getId());
 
             // Atualiza o carro

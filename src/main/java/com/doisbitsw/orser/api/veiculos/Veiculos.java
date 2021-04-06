@@ -19,9 +19,10 @@ public class Veiculos {
     private Long entidade;
     private Long setor;
     private String nome;
-    private String placa;
-    private Boolean ismanutencao;
+    private String identificador;
+    private Boolean isdisponivel;
     private Boolean isativo;
+    private Boolean isveiculo;
 
 }
 
