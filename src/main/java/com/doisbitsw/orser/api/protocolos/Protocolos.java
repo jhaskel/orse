@@ -39,6 +39,7 @@ public class Protocolos {
     private Boolean isfinalizado;
     private Boolean isativo;
     private Boolean ispago;
+    private Boolean ismanual;
 
     private Long ano;
     private Long mes;
@@ -48,6 +49,7 @@ public class Protocolos {
     private String modified;
     private String code;
     private Long codi;
+
 
 
     //private Double tot;
