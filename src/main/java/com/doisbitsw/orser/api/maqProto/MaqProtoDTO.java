@@ -11,6 +11,8 @@ public class MaqProtoDTO {
 
     private String nomeVei;
     private String placaVei;
+    private Long quant;
+
 
 
     public static MaqProtoDTO create(MaqProto maqProto) {

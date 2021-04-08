@@ -46,6 +46,17 @@ public class MaqProtoController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/relatorio/{setor}")
+    public ResponseEntity getRelatorio(@PathVariable("setor") Long setor) {
+        List<MaqProtoDTO> carros = service.getRelatorio(setor);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
+
+
+
     @PostMapping
     public ResponseEntity post(@RequestBody MaqProto maqProto) {
 
