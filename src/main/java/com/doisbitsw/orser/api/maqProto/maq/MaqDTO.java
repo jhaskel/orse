@@ -3,12 +3,14 @@ package com.doisbitsw.orser.api.maqProto.maq;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 
+import java.util.List;
+
 @Data
 public class MaqDTO {
     private Long id;
     private Long protocolo;
     private Long maquina;
-    private String vazio;
+    private List<String> vazio ;
 
 
     public static MaqDTO create(Maq maq) {

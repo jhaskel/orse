@@ -2,12 +2,12 @@ package com.doisbitsw.orser.api.maqProto.maq;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @NoArgsConstructor
 @Data
@@ -19,7 +19,7 @@ public class Maq {
     private Long id;
     private Long protocolo;
     private Long maquina;
-    private String vazio;
+    private String vazio ;
 
 
 
