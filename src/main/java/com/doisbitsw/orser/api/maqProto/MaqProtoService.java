@@ -39,6 +39,11 @@ public class MaqProtoService {
         return rep.findRelatorio(setor,ano).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
     }
 
+    public List<MaqProtoDTO> getVeiculo(Long setor,Long ano,Long maquina) {
+        return rep.findVeiculo(setor,ano,maquina).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
+    }
+
+
     public MaqProtoDTO insert(MaqProto maqProto) {
         Assert.isNull(maqProto.getId(),"Não foi possível inserir o registro");
         return MaqProtoDTO.create(rep.save(maqProto));
