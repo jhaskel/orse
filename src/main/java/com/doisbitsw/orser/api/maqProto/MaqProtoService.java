@@ -35,8 +35,8 @@ public class MaqProtoService {
         return rep.findBuscaProtocolo(protocolo).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
     }
 
-    public List<MaqProtoDTO> getRelatorio(Long setor) {
-        return rep.findRelatorio(setor).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
+    public List<MaqProtoDTO> getRelatorio(Long setor,Long ano) {
+        return rep.findRelatorio(setor,ano).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
     }
 
     public MaqProtoDTO insert(MaqProto maqProto) {
