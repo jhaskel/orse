@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
 
 @NoArgsConstructor
 @Data
@@ -21,7 +22,7 @@ public class MaqProto {
     private Long id;
     private Long protocolo;
     private Long maquina;
-    private String vazio;
+    private List<String> vazio;
 
 
     private String nome;
