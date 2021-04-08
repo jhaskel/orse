@@ -8,8 +8,9 @@ public class MaqProtoDTO {
     private Long id;
     private Long protocolo;
     private Long maquina;
+    private String vazio;
 
-    private String nomeVei;
+    private String nome;
     private Long quant;
 
 

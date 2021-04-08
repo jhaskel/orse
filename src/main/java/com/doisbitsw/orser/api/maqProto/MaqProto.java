@@ -18,6 +18,7 @@ public class MaqProto {
     private Long id;
     private Long protocolo;
     private Long maquina;
+    private String vazio;
 
     private Long quant;
     private String nome;
