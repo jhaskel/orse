@@ -22,7 +22,7 @@ public class MaqProto {
     private Long id;
     private Long protocolo;
     private Long maquina;
-    private List<String> vazio;
+    private String vazio;
 
 
     private String nome;

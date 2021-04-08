@@ -11,7 +11,7 @@ import javax.persistence.Id;
 
 @NoArgsConstructor
 @Data
-@Entity(name = "maq_proto1")
+@Entity(name = "maq_proto")
 public class Maq {
 
     @Id
