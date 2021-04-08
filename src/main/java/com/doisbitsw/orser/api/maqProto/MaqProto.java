@@ -23,9 +23,9 @@ public class MaqProto {
     private Long maquina;
     private String vazio;
 
-    @Autowired
+
     private String nome;
-    @Autowired
+    private String identificador;
     private Long quant;
 
 
