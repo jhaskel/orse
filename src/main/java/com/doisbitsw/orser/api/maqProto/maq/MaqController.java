@@ -9,7 +9,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/maqproto")
+@RequestMapping("/api/v1/maq")
 public class MaqController {
     @Autowired
     private MaqService service;
