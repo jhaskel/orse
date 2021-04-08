@@ -20,8 +20,9 @@ public class MaqProto {
     private Long maquina;
     private String vazio;
 
-    private Long quant;
-    private String nome;
+
+    protected String nome;
+    protected Long quant;
 
 
 
