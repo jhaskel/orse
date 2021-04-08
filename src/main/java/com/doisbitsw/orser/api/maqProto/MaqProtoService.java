@@ -39,9 +39,6 @@ public class MaqProtoService {
         return rep.findRelatorio(setor,ano).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
     }
 
-    public List<MaqProtoDTO> getVeiculo(Long setor,Long ano) {
-        return rep.findVeiculo(setor,ano).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
-    }
 
 
     public MaqProtoDTO insert(MaqProto maqProto) {

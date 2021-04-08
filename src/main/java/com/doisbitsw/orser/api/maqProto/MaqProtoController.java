@@ -54,13 +54,7 @@ public class MaqProtoController {
                 ResponseEntity.ok(carros);
     }
 
-    @GetMapping("/veiculo/{setor}/{ano}")
-    public ResponseEntity getVeiculo(@PathVariable("setor") Long setor,@PathVariable("ano") Long ano) {
-        List<MaqProtoDTO> carros = service.getVeiculo(setor,ano);
-        return carros.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
-    }
+
 
 
 
