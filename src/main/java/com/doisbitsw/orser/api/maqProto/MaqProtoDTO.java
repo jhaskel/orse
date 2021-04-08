@@ -9,9 +9,9 @@ public class MaqProtoDTO {
     private Long protocolo;
     private Long maquina;
 
-    private String nomeVei;
+   /* private String nomeVei;
     private String placaVei;
-    private Long quant;
+    private Long quant;*/
 
 
 

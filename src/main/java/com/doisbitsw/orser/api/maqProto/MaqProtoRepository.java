@@ -15,15 +15,16 @@ public interface MaqProtoRepository extends JpaRepository<MaqProto, Long> {
     List<MaqProto> findProtocolo(Long protocolo);
 
     @Query(value = "SELECT maq.*, vei.nome AS nomeVei FROM maq_proto maq  INNER JOIN veiculos vei ON vei.id = maq.maquina where maq.protocolo = :protocolo", nativeQuery = true)
+
     List<MaqProto> findBuscaProtocolo(Long protocolo);
 
-    @Query(value = "SELECT maq.*, COUNT(maq.id) AS quant,vei.nome as nomeVei FROM maq_proto maq\n" +
+   /* @Query(value = "SELECT maq.*, COUNT(maq.id) AS quant,vei.nome as nomeVei FROM maq_proto maq\n" +
             "INNER JOIN protocolos pro ON pro.id = maq.protocolo\n" +
             "INNER JOIN veiculos vei ON vei.id = maq.maquina\n" +
             "WHERE pro.isagendado = TRUE AND vei.isveiculo = TRUE AND  pro.setor = :setor\n" +
             "GROUP BY maq.maquina\n" +
             "ORDER BY quant desc", nativeQuery = true)
-    List<MaqProto> findRelatorio(Long setor);
+    List<MaqProto> findRelatorio(Long setor);*/
 
 
 }
