@@ -10,8 +10,8 @@ public class MaqProtoDTO {
     private Long maquina;
     private String vazio;
 
-    private String nome;
-    private Long quant;
+    protected String nome;
+    protected Long quant;
 
 
 
