@@ -38,7 +38,9 @@ public class EmailService {
 				"<body>\n" +
 				"<div>Olá <b>" + user.getNome() + "</b></div>\n" +
 				"\n" +
-				"<div>  <h1>" + user.getAssunto() + "</h1></div>\n" +
+				"<div>  <h5>" + user.getAssunto() + "</h5></div>\n" +
+				"\n" +
+				"<div>  <h1>" + user.getTitulo() + "</h1></div>\n" +
 				"\n" +
 				"<div>  <h4>" + user.getContent() + "</h4></div>\n" +
 				"\n" +
