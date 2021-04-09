@@ -26,13 +26,8 @@ public class UsuarioController {
 
         return ResponseEntity.ok(usuario);
     }
-    @GetMapping("/id/{id}")
-    public ResponseEntity getColetandoByCidade(@PathVariable("id") Long id) {
-        List<UsuarioDTO> coletando = service.getTesteById(id);
-        return coletando.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(coletando);
-    }
+
+
 
     @GetMapping("/email/{email}")
     public ResponseEntity getColetandoByEmail(@PathVariable("email") String email) {
