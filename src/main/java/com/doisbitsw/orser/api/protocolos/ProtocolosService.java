@@ -98,6 +98,7 @@ public class ProtocolosService {
             db.setCodi(protocolos.getCodi());
             db.setMesAg(protocolos.getMesAg());
             db.setIsmanual(protocolos.getIsmanual());
+            db.setFazer(protocolos.getFazer());
 
             System.out.println("Af id " + db.getId());
 

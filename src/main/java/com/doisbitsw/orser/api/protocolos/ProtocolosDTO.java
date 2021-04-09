@@ -40,6 +40,7 @@ public class ProtocolosDTO {
     private String modified;
     private String code;
     private String codi;
+    private String fazer;
 
 
 
