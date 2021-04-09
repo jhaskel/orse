@@ -4,7 +4,6 @@ public class User {
 	
 	private String nome;
 	private String assunto;
-	private String titulo;
 	private String email;
 	private String content;
 	private String created;
@@ -21,14 +20,6 @@ public class User {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
 	}
 
 	public String getAssunto() {
