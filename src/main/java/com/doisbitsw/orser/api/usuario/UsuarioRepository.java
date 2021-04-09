@@ -32,6 +32,10 @@ public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
     @Query(value = "SELECT * FROM user WHERE  entidade = :entidade order by nome ", nativeQuery = true)
     List<Usuario> findEntidade(Long entidade);
 
+    @Query(value = "SELECT * FROM user WHERE  id = :id", nativeQuery = true)
+    List<Usuario> findId(Long id);
+
+
 
 
 

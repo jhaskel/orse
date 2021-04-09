@@ -43,6 +43,11 @@ public class UsuarioService {
     }
 
 
+    public List<UsuarioDTO> getId(Long id) {
+        return rep.findId(id).stream().map(UsuarioDTO::create).collect(Collectors.toList());
+    }
+
+
     public UsuarioDTO insert(Usuario usuario) {
         Assert.isNull(usuario.getId(),"Não foi possível inserir o registro");
         return UsuarioDTO.create(rep.save(usuario));
