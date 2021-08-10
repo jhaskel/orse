@@ -13,8 +13,9 @@ public class MaqProtoDTO {
     private String vazio;
 
     private String nome;
-    private Long quant;
     private String identificador;
+    private Long quant;
+
 
 
 

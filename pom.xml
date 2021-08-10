@@ -58,10 +58,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+
 
 		<!-- MySQL -->
 		<dependency>
@@ -158,6 +155,7 @@
 			<version>RELEASE</version>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<repositories>
