@@ -10,6 +10,7 @@ public class MaqProtoDTO {
     private Long id;
     private Long protocolo;
     private Long maquina;
+    private Long implemento;
     private String vazio;
 
     private String nome;
