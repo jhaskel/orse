@@ -10,6 +10,7 @@ public class VeiculosDTO {
     private Long setor;
     private String nome;
     private String identificador;
+    private String operador;
     private Boolean isdisponivel;
     private Boolean isativo;
     private Boolean isveiculo;

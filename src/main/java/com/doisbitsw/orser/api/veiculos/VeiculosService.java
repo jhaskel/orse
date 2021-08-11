@@ -63,6 +63,7 @@ public class VeiculosService {
             db.setIsativo(maquinas.getIsativo());
             db.setIsdisponivel(maquinas.getIsdisponivel());
             db.setIsveiculo(maquinas.getIsveiculo());
+            db.setOperador(maquinas.getOperador());
             System.out.println("Af id " + db.getId());
 
             // Atualiza o carro
