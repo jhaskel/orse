@@ -11,9 +11,10 @@ public interface MaqProtoRepository extends JpaRepository<MaqProto, Long> {
     List<MaqProto> findAll();
 
 
-    @Query(value = "SELECT maq.*,COUNT(maq.id) AS quant,vei.nome as nome ,vei.identificador AS identificador,vei.operador as operador\n" +
+    @Query(value = "SELECT maq.*,COUNT(maq.id) AS quant,vei.nome as nome ,vei.identificador AS identificador,vei.operador as operador,imp.nome as imple\n" +
             "FROM maq_proto maq\n" +
             "INNER JOIN veiculos vei ON vei.id = maq.maquina\n" +
+            "left JOIN implementos imp ON imp.id = maq.implemento\n" +
             "where maq.protocolo = :protocolo \n" +
             "GROUP BY maq.maquina", nativeQuery = true)
     List<MaqProto> findProtocolo(Long protocolo);
@@ -22,9 +23,10 @@ public interface MaqProtoRepository extends JpaRepository<MaqProto, Long> {
 
     List<MaqProto> findBuscaProtocolo(Long protocolo);
 
-    @Query(value = "SELECT maq.*, COUNT(maq.id) AS quant,vei.nome as nome,vei.identificador AS identificador,vei.operador as operador FROM maq_proto maq\n" +
+    @Query(value = "SELECT maq.*, COUNT(maq.id) AS quant,vei.nome as nome,vei.identificador AS identificador,vei.operador as operador,imp.nome as imple FROM maq_proto maq\n" +
             "INNER JOIN protocolos pro ON pro.id = maq.protocolo\n" +
             "INNER JOIN veiculos vei ON vei.id = maq.maquina\n" +
+            "left JOIN implementos imp ON imp.id = maq.implemento\n" +
             "WHERE pro.isagendado = TRUE AND vei.isveiculo = TRUE AND  pro.setor = :setor and pro.ano = :ano\n" +
             "GROUP BY maq.maquina\n" +
             "ORDER BY quant desc", nativeQuery = true)
