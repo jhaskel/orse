@@ -13,6 +13,8 @@ public class ProtocolosDTO {
     private Long servico;
     private Long setor;
     private Long entidade;
+    private Long rating;
+    private String avaliacao;
     private String status;
     private String nomeUsuario;
     private String nomeLocalidade;
