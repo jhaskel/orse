@@ -35,6 +35,7 @@ public class Protocolos {
     private String dataIn;
     private String periodoIn;
     private String dataFim;
+    private String dataAval;
     private String periodoFim;
     private Boolean isuser;
     private Boolean isagendado;
