@@ -28,6 +28,7 @@ public class MaqProto {
 
     private String nome;
     private String identificador;
+    private String operador;
     private Long quant;
 
 
