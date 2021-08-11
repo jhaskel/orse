@@ -14,6 +14,7 @@ public class Maq {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long protocolo;
+    private Long implemento;
     private Long maquina;
 
     private String vazio;

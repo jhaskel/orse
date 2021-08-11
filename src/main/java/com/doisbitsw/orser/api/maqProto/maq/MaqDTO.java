@@ -9,6 +9,7 @@ import java.util.List;
 public class MaqDTO {
     private Long id;
     private Long protocolo;
+    private Long implemento;
     private Long maquina;
     private List<String> vazio ;
 
