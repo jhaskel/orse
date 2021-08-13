@@ -33,8 +33,12 @@ public class VeiculosService {
     }
 
 
-    public List<VeiculosDTO> getEntidade(Long entidade,Long setor) {
-        return rep.findEntidade(entidade,setor).stream().map(VeiculosDTO::create).collect(Collectors.toList());
+    public List<VeiculosDTO> getEntidadeSetor(Long entidade,Long setor) {
+        return rep.findEntidadeSetor(entidade,setor).stream().map(VeiculosDTO::create).collect(Collectors.toList());
+    }
+
+    public List<VeiculosDTO> getEntidade(Long entidade) {
+        return rep.findEntidade(entidade).stream().map(VeiculosDTO::create).collect(Collectors.toList());
     }
 
 
