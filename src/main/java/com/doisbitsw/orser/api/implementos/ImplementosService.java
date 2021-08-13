@@ -33,8 +33,12 @@ public class ImplementosService {
     }
 
 
-    public List<ImplementosDTO> getEntidade(Long entidade, Long setor) {
-        return rep.findEntidade(entidade,setor).stream().map(ImplementosDTO::create).collect(Collectors.toList());
+    public List<ImplementosDTO> getEntidadeSetor(Long entidade, Long setor) {
+        return rep.findEntidadeSetor(entidade,setor).stream().map(ImplementosDTO::create).collect(Collectors.toList());
+    }
+
+    public List<ImplementosDTO> getEntidade(Long entidade) {
+        return rep.findEntidade(entidade).stream().map(ImplementosDTO::create).collect(Collectors.toList());
     }
 
 
