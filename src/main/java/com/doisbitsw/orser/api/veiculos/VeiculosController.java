@@ -52,8 +52,8 @@ public class VeiculosController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
-    @GetMapping("/setorAgendado/{setor}/{cod}")
-    public ResponseEntity getSetorAgendado(@PathVariable("setor") Long setor,@PathVariable("cod") String cod) {
+    @GetMapping("/setorAgendado/{setor}/{operador}")
+    public ResponseEntity getSetorAgendado(@PathVariable("setor") Long setor,@PathVariable("operador") String cod) {
         List<VeiculosDTO> carros = service.getSetorAgendado(setor,cod);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
