@@ -13,16 +13,14 @@ public class MaqProtoDTO {
     private Long implemento;
     private String vazio;
     private String cod;
+
     private String nome;
     private String identificador;
     private String operador;
     private String imple;
 
     private Long quant;
-    private String nomeVei;
-    private String nomeImp;
-    private String nomeUser;
-    private String nomeLocal;
+
 
 
 
