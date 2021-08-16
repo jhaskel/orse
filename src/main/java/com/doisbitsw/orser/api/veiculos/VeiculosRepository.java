@@ -17,7 +17,8 @@ public interface VeiculosRepository extends JpaRepository<Veiculos, Long> {
     @Query(value = "SELECT * FROM veiculos where entidade = :entidade and setor = :setor  ORDER BY isativo desc,isdisponivel desc,id desc", nativeQuery = true)
     List<Veiculos> findEntidadeSetor(Long entidade,Long setor);
 
-    @Query(value = "SELECT * FROM veiculos where entidade = :entidade and setor = :setor  ORDER BY isativo desc,isdisponivel desc,id desc", nativeQuery = true)
+    @Query(value = "select * from maq vei\n" +
+            "where vei.setor = :setor and vei.isveiculo = true and vei.id NOT IN (SELECT maquina FROM maq_proto where cod = :cod)  ORDER BY isativo desc,isdisponivel desc,id desc", nativeQuery = true)
     List<Veiculos> findSetorAgendado(Long setor,String cod);
 
     @Query(value = "SELECT * FROM veiculos where entidade = :entidade   ORDER BY isativo desc,isdisponivel desc,id desc", nativeQuery = true)
