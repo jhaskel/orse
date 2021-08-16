@@ -16,7 +16,7 @@ public class Maq {
     private Long protocolo;
     private Long implemento;
     private Long maquina;
-
     private String vazio;
+    private String cod;
 }
 

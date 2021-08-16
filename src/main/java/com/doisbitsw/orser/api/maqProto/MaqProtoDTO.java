@@ -12,7 +12,7 @@ public class MaqProtoDTO {
     private Long maquina;
     private Long implemento;
     private String vazio;
-
+    private String cod;
     private String nome;
     private String identificador;
     private String operador;

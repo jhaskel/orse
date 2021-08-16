@@ -56,6 +56,10 @@ public class MaqProtoService {
             // Copiar as propriedades
             db.setProtocolo(maqProto.getProtocolo());
             db.setMaquina(maqProto.getMaquina());
+            db.setCod(maqProto.getCod());
+            db.setImplemento(maqProto.getImplemento());
+            db.setOperador(maqProto.getOperador());
+
             System.out.println("Af id " + db.getId());
 
             // Atualiza o carro
