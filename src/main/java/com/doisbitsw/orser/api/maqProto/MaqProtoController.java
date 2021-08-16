@@ -38,7 +38,7 @@ public class MaqProtoController {
                 ResponseEntity.ok(carros);
     }
 
-    @GetMapping("/cod/{cod}")
+    @GetMapping("/codigo/{cod}")
     public ResponseEntity getCod(@PathVariable("cod") String cod) {
         List<MaqProtoDTO> carros = service.getCod(cod);
         return carros.isEmpty() ?
