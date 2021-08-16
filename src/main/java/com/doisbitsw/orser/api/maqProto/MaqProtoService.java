@@ -31,6 +31,10 @@ public class MaqProtoService {
         return rep.findProtocolo(protocolo).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
     }
 
+    public List<MaqProtoDTO> getCod(String cod) {
+        return rep.findCod(cod).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
+    }
+
     public List<MaqProtoDTO> getBuscaProtocolo(Long protocolo) {
         return rep.findBuscaProtocolo(protocolo).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
     }
