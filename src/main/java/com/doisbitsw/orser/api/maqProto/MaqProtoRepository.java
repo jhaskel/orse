@@ -23,7 +23,7 @@ public interface MaqProtoRepository extends JpaRepository<MaqProto, Long> {
             "FROM maq_proto maq\n" +
             "INNER JOIN veiculos vei ON vei.id = maq.maquina\n" +
             "left JOIN implementos imp ON imp.id = maq.implemento\n" +
-            "where maq.protocolo = :cod \n" +
+            "where maq.cod = :cod \n" +
             "GROUP BY maq.maquina", nativeQuery = true)
     List<MaqProto> findCod(String cod);
 
