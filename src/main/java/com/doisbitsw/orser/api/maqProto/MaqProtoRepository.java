@@ -19,7 +19,7 @@ public interface MaqProtoRepository extends JpaRepository<MaqProto, Long> {
             "GROUP BY maq.maquina", nativeQuery = true)
     List<MaqProto> findProtocolo(Long protocolo);
 
-    @Query(value = "select maq.*,vei.nome as nomeVei, imp.nome as nomeImp, pro.nome_usuario as nomeUser, pro.nome_localidade as nomeLocal from maq_proto maq \n" +
+    @Query(value = "select maq.* from maq_proto maq \n" +
             "inner join veiculos vei on vei.id = maq.maquina\n" +
             "inner join implementos imp on imp.id = maq.implemento\n" +
             "inner join protocolos pro on pro.id = maq.protocolo\n" +

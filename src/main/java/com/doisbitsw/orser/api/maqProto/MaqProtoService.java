@@ -15,7 +15,7 @@ public class MaqProtoService {
     @Autowired
 
     private MaqProtoRepository rep;
-    public List<MaqProtoDTO> getCarros() {
+    public List<MaqProtoDTO> getMaqs() {
         List<MaqProtoDTO> list = rep.findAll().stream().map(MaqProtoDTO::create).collect(Collectors.toList());
         return list;
     }

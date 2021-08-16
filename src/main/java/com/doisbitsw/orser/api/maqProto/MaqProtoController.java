@@ -17,8 +17,8 @@ public class MaqProtoController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<MaqProtoDTO> carros = service.getCarros();
-        return ResponseEntity.ok(carros);
+        List<MaqProtoDTO> maqs = service.getMaqs();
+        return ResponseEntity.ok(maqs);
     }
 
 
@@ -32,35 +32,35 @@ public class MaqProtoController {
 
     @GetMapping("/protocolo/{protocolo}")
     public ResponseEntity getProtocolo(@PathVariable("protocolo") Long protocolo) {
-        List<MaqProtoDTO> carros = service.getProtocolo(protocolo);
-        return carros.isEmpty() ?
+        List<MaqProtoDTO> maqs = service.getProtocolo(protocolo);
+        return maqs.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(maqs);
     }
 
     @GetMapping("/codigo/{cod}")
     public ResponseEntity getCod(@PathVariable("cod") String cod) {
-        List<MaqProtoDTO> carros = service.getCod(cod);
-        return carros.isEmpty() ?
+        List<MaqProtoDTO> maqs = service.getCod(cod);
+        return maqs.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(maqs);
     }
 
 
     @GetMapping("/busca/{protocolo}")
     public ResponseEntity getBuscaProtocolo(@PathVariable("protocolo") Long protocolo) {
-        List<MaqProtoDTO> carros = service.getBuscaProtocolo(protocolo);
-        return carros.isEmpty() ?
+        List<MaqProtoDTO> maqs = service.getBuscaProtocolo(protocolo);
+        return maqs.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(maqs);
     }
 
     @GetMapping("/relatorio/{setor}/{ano}")
     public ResponseEntity getRelatorio(@PathVariable("setor") Long setor,@PathVariable("ano") Long ano) {
-        List<MaqProtoDTO> carros = service.getRelatorio(setor,ano);
-        return carros.isEmpty() ?
+        List<MaqProtoDTO> maqs = service.getRelatorio(setor,ano);
+        return maqs.isEmpty() ?
                 ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
+                ResponseEntity.ok(maqs);
     }
 
 
