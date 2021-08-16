@@ -28,7 +28,7 @@ public interface ImplementosRepository extends JpaRepository<Implementos, Long> 
     List<Implementos> findId(Long id);
 
     @Query(value = "select * from implementos imp\n" +
-            "where imp.setor = :setor  and imp.id and imp.isativo = true and imp.isdisponivel = true NOT IN (SELECT implemento FROM maq_proto where cod = :nome))", nativeQuery = true)
+            "where imp.setor = :setor   and imp.isativo = true and imp.isdisponivel = true  and imp.id  NOT IN (SELECT implemento FROM maq_proto where cod = :nome)", nativeQuery = true)
     List<Implementos> findSetorAgendado(Long setor, String nome);
 
 
