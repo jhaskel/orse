@@ -1,6 +1,7 @@
 package com.doisbitsw.orser.api.implementos;
 
 import com.doisbitsw.orser.api.infra.exception.ObjectNotFoundException;
+import com.doisbitsw.orser.api.veiculos.VeiculosDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -44,6 +45,10 @@ public class ImplementosService {
 
     public List<ImplementosDTO> getById(Long id) {
         return rep.findId(id).stream().map(ImplementosDTO::create).collect(Collectors.toList());
+    }
+
+    public List<ImplementosDTO> getSetorAgendado(Long setor, String nome) {
+        return rep.findSetorAgendado(setor,nome).stream().map(ImplementosDTO::create).collect(Collectors.toList());
     }
 
 

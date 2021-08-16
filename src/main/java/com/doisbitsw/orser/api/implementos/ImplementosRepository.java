@@ -1,6 +1,7 @@
 package com.doisbitsw.orser.api.implementos;
 
 
+import com.doisbitsw.orser.api.veiculos.Veiculos;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -25,6 +26,10 @@ public interface ImplementosRepository extends JpaRepository<Implementos, Long> 
 
     @Query(value = "SELECT * FROM implementos where id = :id", nativeQuery = true)
     List<Implementos> findId(Long id);
+
+    @Query(value = "select * from implementos imp\n" +
+            "where imp.setor = :setor  and imp.id and imp.isativo = true and imp.isdisponivel = true NOT IN (SELECT implemento FROM maq_proto where cod = :nome))", nativeQuery = true)
+    List<Implementos> findSetorAgendado(Long setor, String nome);
 
 
 

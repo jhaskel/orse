@@ -1,5 +1,6 @@
 package com.doisbitsw.orser.api.implementos;
 
+import com.doisbitsw.orser.api.veiculos.VeiculosDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -56,6 +57,13 @@ public class ImplementosController {
     @GetMapping("/id/{id}")
     public ResponseEntity getById(@PathVariable("id") Long id) {
         List<ImplementosDTO> carros = service.getById(id);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+    @GetMapping("/setorAgendado/{setor}/{nome}")
+    public ResponseEntity getSetorAgendado(@PathVariable("setor") Long setor,@PathVariable("nome") String nome) {
+        List<ImplementosDTO> carros = service.getSetorAgendado(setor,nome);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
