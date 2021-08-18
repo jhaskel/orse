@@ -45,7 +45,7 @@ public class ProtoJoinDTO {
     private String fazer;
 
     private Long maquina;
-    private String nomeVei;
+    private String nomevei;
 
 
 

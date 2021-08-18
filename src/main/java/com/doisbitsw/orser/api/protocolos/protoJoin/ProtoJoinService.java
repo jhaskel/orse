@@ -27,17 +27,7 @@ public class ProtoJoinService {
     }
 
 
-    public ProtoJoinDTO insert(ProtoJoin protoJoin) {
-        Assert.isNull(protoJoin.getId(),"Não foi possível inserir o registro");
-        return ProtoJoinDTO.create(rep.save(protoJoin));
-    }
 
-    public List<ProtoJoinDTO> getAtivo(Long entidade, Long ano, Long setor) {
-        return rep.findAtivo(entidade,ano,setor).stream().map(ProtoJoinDTO::create).collect(Collectors.toList());
-    }
-    public List<ProtoJoinDTO> getProto(Long entidade, Long ano) {
-        return rep.findProto(entidade,ano).stream().map(ProtoJoinDTO::create).collect(Collectors.toList());
-    }
 
     public List<ProtoJoinDTO> getProtoMaq(Long entidade, Long ano) {
         return rep.findProtoMaq(entidade,ano).stream().map(ProtoJoinDTO::create).collect(Collectors.toList());
@@ -45,17 +35,6 @@ public class ProtoJoinService {
 
 
 
-    public List<ProtoJoinDTO> getAgendado(Long entidade, Long ano, Long setor) {
-        return rep.findAgendado(entidade,ano,setor).stream().map(ProtoJoinDTO::create).collect(Collectors.toList());
-    }
-
-    public List<ProtoJoinDTO> getAgendadoMes(Long entidade, Long ano, Long mes, Long setor) {
-        return rep.findAgendadoMes(entidade,ano,mes,setor).stream().map(ProtoJoinDTO::create).collect(Collectors.toList());
-    }
-
-    public List<ProtoJoinDTO> getUser(Long entidade, Long usuario) {
-        return rep.findUser(entidade,usuario).stream().map(ProtoJoinDTO::create).collect(Collectors.toList());
-    }
 
 
 
@@ -63,9 +42,6 @@ public class ProtoJoinService {
 
 
 
-    public long getCode(Long entidade){
-        return rep.findCode(entidade);
-    }
 
 
     public ProtoJoinDTO update(ProtoJoin protoJoin, Long id) {
