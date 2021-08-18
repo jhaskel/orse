@@ -18,5 +18,6 @@ public class Maq {
     private Long maquina;
     private String vazio;
     private String cod;
+    private Boolean isdisponivel;
 }
 

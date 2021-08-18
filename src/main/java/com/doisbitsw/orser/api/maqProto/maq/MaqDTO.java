@@ -12,6 +12,7 @@ public class MaqDTO {
     private Long implemento;
     private Long maquina;
     private List<String> vazio ;
+    private Boolean isdisponivel;
 
 
     public static MaqDTO create(Maq maq) {

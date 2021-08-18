@@ -63,6 +63,7 @@ public class MaqProtoService {
             db.setCod(maqProto.getCod());
             db.setImplemento(maqProto.getImplemento());
             db.setOperador(maqProto.getOperador());
+            db.setIsdisponivel(maqProto.getIsdisponivel());
 
             System.out.println("Af id " + db.getId());
 

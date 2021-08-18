@@ -13,6 +13,7 @@ public class MaqProtoDTO {
     private Long implemento;
     private String vazio;
     private String cod;
+    private Boolean isdisponivel;
 
     private String nome;
     private String identificador;
