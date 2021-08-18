@@ -28,6 +28,16 @@ public interface MaqProtoRepository extends JpaRepository<MaqProto, Long> {
             "GROUP BY maq.maquina", nativeQuery = true)
     List<MaqProto> findCod(String cod);
 
+    @Query(value = "SELECT maq.*,COUNT(maq.id) AS quant,vei.nome as nome ,vei.nome AS identificador,vei.nome as operador,vei.nome as imple\n" +
+            "FROM maq_proto maq\n" +
+            "INNER JOIN veiculos vei ON vei.id = maq.maquina          \n" +
+            "where vei.entidade = :entidade\n" +
+            "GROUP BY maq.id", nativeQuery = true)
+    List<MaqProto> findMaqServicos(Long entidade);
+
+
+
+
     @Query(value = "SELECT maq.*, COUNT(maq.id) AS quant,vei.nome AS nomeVei FROM maq_proto maq  INNER JOIN veiculos vei ON vei.id = maq.maquina where maq.protocolo = :protocolo", nativeQuery = true)
 
     List<MaqProto> findBuscaProtocolo(Long protocolo);
