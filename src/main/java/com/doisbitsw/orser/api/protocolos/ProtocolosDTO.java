@@ -28,6 +28,7 @@ public class ProtocolosDTO {
     private String dataFim;
     private String dataAval;
     private String periodoFim;
+    private Long createdBy;
     private Boolean isuser;
     private Boolean isagendado;
     private Boolean isfinalizado;
