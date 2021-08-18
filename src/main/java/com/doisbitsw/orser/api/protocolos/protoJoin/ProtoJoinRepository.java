@@ -16,7 +16,7 @@ public interface ProtoJoinRepository extends JpaRepository<ProtoJoin, Long> {
     @Query(value = "SELECT *  FROM protocolos where entidade = :entidade and ano = :ano  order by id desc   ", nativeQuery = true)
     List<ProtoJoin> findProto(Long entidade, Long ano);
 
-    @Query(value = "select pro.* , maq.maquina as maquina, vei.nome as nomeVei\n" +
+    @Query(value = "select pro.*\n" +
             "from protocolos pro\n" +
             "left join maq_proto maq on maq.protocolo = pro.id\n" +
             "left join veiculos vei on vei.id = maq.maquina\n" +
