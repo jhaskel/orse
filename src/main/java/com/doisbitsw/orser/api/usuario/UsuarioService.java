@@ -68,10 +68,10 @@ public class UsuarioService {
            db.setEmail(usuario.getEmail());
            db.setNivel(usuario.getNivel());
            db.setCpf(usuario.getCpf());
-
            db.setCelular(usuario.getCelular());
            db.setIsativo(usuario.getIsativo());
            db.setLocalidade(usuario.getLocalidade());
+           db.setSetor(usuario.getSetor());
 
 
             System.out.println("Usuario id " + db.getId());
