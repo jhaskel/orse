@@ -53,11 +53,6 @@ public class ProtocolosService {
         return rep.findUser(entidade,usuario).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
 
-    public List<ProtocolosDTO> getProtoMaq(Long entidade, Long ano) {
-        return rep.findProtoMaq(entidade,ano).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
-    }
-
-
 
 
 

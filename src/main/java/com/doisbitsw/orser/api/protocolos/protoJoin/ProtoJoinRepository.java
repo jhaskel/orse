@@ -13,7 +13,7 @@ public interface ProtoJoinRepository extends JpaRepository<ProtoJoin, Long> {
             "from protocolos pro\n" +
             "left join maq_proto maq on maq.protocolo = pro.id\n" +
             "left join veiculos vei on vei.id = maq.maquina\n" +
-            "where maq.maquina = :entidade and ano = :ano and pro.ismanual = false pro.status='Agendado'\n" +
+            "where maq.maquina = :entidade and ano = :ano and pro.ismanual = false and (pro.status='Agendado' or pro.status = 'Iniciado')\n" +
             "group by pro.id" , nativeQuery = true)
     List<ProtoJoin> findProtoMaq(Long entidade, Long ano);
 
