@@ -1,6 +1,7 @@
 package com.doisbitsw.orser.api.protocolos;
 
 
+import com.doisbitsw.orser.api.protocolos.protoJoin.ProtoJoin;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -27,5 +28,13 @@ public interface ProtocolosRepository extends JpaRepository<Protocolos, Long> {
 
     @Query(value = "SELECT codi FROM protocolos WHERE entidade = :entidade ORDER BY codi DESC LIMIT 1 ", nativeQuery = true)
     long findCode(Long entidade);
+
+    @Query(value = "select pro.* from protocolos pro\n" +
+            "left join maq_proto maq on maq.protocolo = pro.id\n" +
+            "left join veiculos vei on vei.id = maq.maquina\n" +
+            "where maq.maquina = :entidade and ano = :ano and pro.ismanual = false and (pro.`status`='Agendado' or pro.status= 'Iniciado') \n" +
+            "group by pro.id" , nativeQuery = true)
+    List<Protocolos> findProtoMaq(Long entidade, Long ano);
+
 
 }

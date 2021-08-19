@@ -1,6 +1,7 @@
 package com.doisbitsw.orser.api.protocolos;
 
 import com.doisbitsw.orser.api.infra.exception.ObjectNotFoundException;
+import com.doisbitsw.orser.api.protocolos.protoJoin.ProtoJoinDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -51,6 +52,11 @@ public class ProtocolosService {
     public List<ProtocolosDTO> getUser(Long entidade,Long usuario) {
         return rep.findUser(entidade,usuario).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
+
+    public List<ProtocolosDTO> getProtoMaq(Long entidade, Long ano) {
+        return rep.findProtoMaq(entidade,ano).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
+    }
+
 
 
 

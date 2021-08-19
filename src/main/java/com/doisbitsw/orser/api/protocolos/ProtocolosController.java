@@ -1,5 +1,6 @@
 package com.doisbitsw.orser.api.protocolos;
 
+import com.doisbitsw.orser.api.protocolos.protoJoin.ProtoJoinDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +38,14 @@ public class ProtocolosController {
     @GetMapping("/proto/{entidade}/{ano}")
     public ResponseEntity getProto(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano) {
         List<ProtocolosDTO> carros = service.getProto(entidade,ano);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
+    @GetMapping("/protoj/{entidade}/{ano}")
+    public ResponseEntity getProtoMaq(@PathVariable("entidade") Long entidade,@PathVariable("ano") Long ano) {
+        List<ProtocolosDTO> carros = service.getProtoMaq(entidade,ano);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
