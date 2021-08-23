@@ -36,9 +36,15 @@ public class MdoService {
     }
 
 
-    public List<MdoDTO> getEntidade(Long entidade,Long setor) {
-        return rep.findEntidade(entidade,setor).stream().map(MdoDTO::create).collect(Collectors.toList());
+    public List<MdoDTO> getEntidadeSetor(Long entidade,Long setor) {
+        return rep.findEntidadeSetor(entidade,setor).stream().map(MdoDTO::create).collect(Collectors.toList());
     }
+
+
+    public List<MdoDTO> getEntidade(Long entidade) {
+        return rep.findEntidade(entidade).stream().map(MdoDTO::create).collect(Collectors.toList());
+    }
+
 
 
     public MdoDTO insert(Mdo maquinas) {

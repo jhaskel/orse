@@ -13,6 +13,7 @@ public interface SetorRepository extends JpaRepository<Setor, Long> {
     @Query(value = "SELECT *  FROM setor where entidade = :entidade ", nativeQuery = true)
     List<Setor> findEntidade(Long entidade);
 
+
     @Query(value = "SELECT *  FROM setor where entidade = :entidade and id = :id", nativeQuery = true)
     List<Setor> findId(Long entidade,Long id);
 

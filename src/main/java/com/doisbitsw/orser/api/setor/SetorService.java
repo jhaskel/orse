@@ -31,6 +31,7 @@ public class SetorService {
         return rep.findEntidade(entidade).stream().map(SetorDTO::create).collect(Collectors.toList());
     }
 
+
     public List<SetorDTO> getId(Long entidade,Long id) {
         return rep.findId(entidade,id).stream().map(SetorDTO::create).collect(Collectors.toList());
     }

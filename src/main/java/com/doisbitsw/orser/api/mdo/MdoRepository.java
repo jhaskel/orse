@@ -19,7 +19,10 @@ public interface MdoRepository extends JpaRepository<Mdo, Long> {
 
 
     @Query(value = "SELECT * FROM mdo where entidade = :entidade and setor = :setor  ORDER BY id desc", nativeQuery = true)
-    List<Mdo> findEntidade(Long entidade,Long setor);
+    List<Mdo> findEntidadeSetor(Long entidade,Long setor);
+
+    @Query(value = "SELECT * FROM mdo where entidade = :entidade   ORDER BY id desc", nativeQuery = true)
+    List<Mdo> findEntidade(Long entidade);
 
 
 

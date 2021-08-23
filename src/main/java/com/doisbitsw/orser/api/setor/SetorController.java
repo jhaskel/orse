@@ -38,6 +38,8 @@ public class SetorController {
                 ResponseEntity.ok(carros);
     }
 
+
+
     @GetMapping("/id/{entidade}/{id}")
     public ResponseEntity getId(@PathVariable("entidade") Long entidade,@PathVariable("id") Long id) {
         List<SetorDTO> carros = service.getId(entidade,id);
