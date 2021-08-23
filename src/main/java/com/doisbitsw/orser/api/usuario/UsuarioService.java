@@ -53,9 +53,6 @@ public class UsuarioService {
         return UsuarioDTO.create(rep.save(usuario));
     }
 
-
-
-
     public UsuarioDTO update(Usuario usuario, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
@@ -73,7 +70,7 @@ public class UsuarioService {
            db.setLocalidade(usuario.getLocalidade());
            db.setSetor(usuario.getSetor());
            db.setReceberemail(usuario.getReceberemail());
-           //db.setLogin(usuario.getLogin());
+           db.setLogin(usuario.getLogin());
 
 
             System.out.println("Usuario id " + db.getId());
