@@ -53,7 +53,7 @@ public class MdoController {
                 ResponseEntity.ok(carros);
     }
 
-    @GetMapping("/entidade/{entidade}/{setor}")
+    @GetMapping("/entidade/{entidade}")
     public ResponseEntity getEntidade(@PathVariable("entidade") Long entidade) {
         List<MdoDTO> carros = service.getEntidade(entidade);
         return carros.isEmpty() ?
