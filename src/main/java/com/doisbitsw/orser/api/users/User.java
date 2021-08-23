@@ -27,6 +27,7 @@ public class User implements UserDetails {
     private String celular;
     private Boolean isativo;
     private Long setor;
+    private Boolean receberemail;
 
 
     @ManyToMany(fetch = FetchType.EAGER)

@@ -72,6 +72,7 @@ public class UsuarioService {
            db.setIsativo(usuario.getIsativo());
            db.setLocalidade(usuario.getLocalidade());
            db.setSetor(usuario.getSetor());
+           db.setReceberemail(usuario.getReceberemail());
 
 
             System.out.println("Usuario id " + db.getId());
