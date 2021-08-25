@@ -107,6 +107,7 @@ public class ProtocolosService {
             db.setAvaliacao(protocolos.getAvaliacao());
             db.setDataAval(protocolos.getDataAval());
             db.setCreatedBy(protocolos.getCreatedBy());
+            db.setCodAg(protocolos.getCodAg());
 
             System.out.println("Af id " + db.getId());
 

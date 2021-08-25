@@ -40,7 +40,6 @@ public class ProtoJoin {
     private Boolean isativo;
     private Boolean ispago;
     private Boolean ismanual;
-
     private Long ano;
     private Long mes;
     private Long mesAg;
@@ -50,6 +49,7 @@ public class ProtoJoin {
     private String code;
     private Long codi;
     private String fazer;
+    private String codAg;
 
     private Long maquina;
     private String nomevei;

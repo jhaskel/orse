@@ -43,6 +43,7 @@ public class ProtoJoinDTO {
     private String code;
     private String codi;
     private String fazer;
+    private String codAg;
 
     private Long maquina;
     private String nomevei;
