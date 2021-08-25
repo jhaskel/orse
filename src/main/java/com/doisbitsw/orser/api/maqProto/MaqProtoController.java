@@ -46,9 +46,9 @@ public class MaqProtoController {
                 ResponseEntity.ok(maqs);
     }
 
-    @GetMapping("/maquina/{maquina}")
-    public ResponseEntity getId(@PathVariable("maquina") Long maquina) {
-        List<MaqProtoDTO> maqs = service.getMaquina(maquina);
+    @GetMapping("/maquina/{maquina}/{cod}")
+    public ResponseEntity getId(@PathVariable("maquina") Long maquina,@PathVariable("cod") String cod) {
+        List<MaqProtoDTO> maqs = service.getMaquina(maquina,cod);
         return maqs.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(maqs);
