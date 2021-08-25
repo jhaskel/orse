@@ -35,6 +35,10 @@ public class MaqProtoService {
         return rep.findCod(cod).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
     }
 
+    public List<MaqProtoDTO> getMaquina(Long maquina) {
+        return rep.findMaquina(maquina).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
+    }
+
     public List<MaqProtoDTO> getMaqServicos(Long entidade) {
         return rep.findMaqServicos(entidade).stream().map(MaqProtoDTO::create).collect(Collectors.toList());
     }
