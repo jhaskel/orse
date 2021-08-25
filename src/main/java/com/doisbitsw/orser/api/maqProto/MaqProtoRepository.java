@@ -39,9 +39,9 @@ public interface MaqProtoRepository extends JpaRepository<MaqProto, Long> {
     @Query(value = "SELECT maq.*,COUNT(maq.id) AS quant,pro.nome_usuario as nome ,pro.nome_servico AS identificador,pro.nome_localidade as operador,pro.status as imple           \n" +
             "from maq_proto maq \n" +
             "inner join protocolos pro on pro.id = maq.protocolo\n" +
-            "where maq.maquina = :maquina and pro.periodo_ag = :cod and (pro.status='Agendado' or pro.status = 'Iniciado')\n" +
+            "where maq.maquina = :maquina and pro.cod_ag = :vazio  and pro.periodo_ag = :cod and (pro.status='Agendado' or pro.status = 'Iniciado')\n" +
             "group by maq.id", nativeQuery = true)
-    List<MaqProto> findMaquina(Long maquina,String cod);
+    List<MaqProto> findMaquina(Long maquina,String cod,String vazio);
 
 
 

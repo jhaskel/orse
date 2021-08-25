@@ -25,7 +25,6 @@ public class MaqProto {
     private Long implemento;
     private String vazio;
     private Boolean isdisponivel;
-
     private String cod;
     private String nome;
     private String identificador;
