@@ -52,9 +52,9 @@ public class VeiculosController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
-    @GetMapping("/setorAgendado/{setor}/{operador}")
-    public ResponseEntity getSetorAgendado(@PathVariable("setor") Long setor,@PathVariable("operador") String operador) {
-        List<VeiculosDTO> carros = service.getSetorAgendado(setor,operador);
+    @GetMapping("/setorAgendado/{setor}/{entidade}")
+    public ResponseEntity getSetorAgendado(@PathVariable("setor") Long setor,@PathVariable("entidade") Long entidade) {
+        List<VeiculosDTO> carros = service.getSetorAgendado(setor,entidade);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);

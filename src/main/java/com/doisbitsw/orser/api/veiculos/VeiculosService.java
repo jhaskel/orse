@@ -38,8 +38,8 @@ public class VeiculosService {
     }
 
 
-    public List<VeiculosDTO> getSetorAgendado(Long setor,String operador) {
-        return rep.findSetorAgendado(setor,operador).stream().map(VeiculosDTO::create).collect(Collectors.toList());
+    public List<VeiculosDTO> getSetorAgendado(Long setor,Long entidade) {
+        return rep.findSetorAgendado(setor,entidade).stream().map(VeiculosDTO::create).collect(Collectors.toList());
     }
 
     public List<VeiculosDTO> getEntidade(Long entidade) {
