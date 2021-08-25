@@ -17,7 +17,7 @@ public interface VeiculosRepository extends JpaRepository<Veiculos, Long> {
 
     @Query(value = "select * from veiculos vei\n" +
             "where vei.setor = :setor  and vei.isativo = true and vei.isdisponivel = true ", nativeQuery = true)
-    List<Veiculos> findSetorAgendado(Long setor,String operador);
+    List<Veiculos> findSetorAgendado(Long setor);
 
     /*@Query(value = "select * from veiculos vei\n" +
             "where vei.setor = :setor  and vei.isativo = true and vei.isdisponivel = true and  vei.id NOT IN (SELECT maquina FROM maq_proto where cod = :operador)", nativeQuery = true)
