@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ServicosRepository extends JpaRepository<Servicos, Long> {
-    @Query(value = "SELECT ser.*, FROM servicos ser  ORDER BY ser.id desc", nativeQuery = true)
+    @Query(value = "SELECT ser.*, FROM servicos ser  ORDER BY ser.nome desc", nativeQuery = true)
     List<Servicos> findAll();
 
     /*@Query(value = "SELECT ser.*,count(ser.id) as quant, ent.cidade AS nomec FROM servicos ser\n" +
@@ -16,10 +16,10 @@ public interface ServicosRepository extends JpaRepository<Servicos, Long> {
             "GROUP BY ser.id ORDER BY ser.id desc ", nativeQuery = true)
     List<Servicos> findEntidadeSetor(Long entidade,Long setor);*/
 
-    @Query(value = "SELECT * FROM servicos where entidade = :entidade and setor = :setor ORDER BY id desc ", nativeQuery = true)
+    @Query(value = "SELECT * FROM servicos where entidade = :entidade and setor = :setor ORDER BY nome desc ", nativeQuery = true)
     List<Servicos> findEntidadeSetor(Long entidade,Long setor);
 
-    @Query(value = "SELECT * FROM servicos where entidade = :entidade and ispublic = true ORDER BY id desc ", nativeQuery = true)
+    @Query(value = "SELECT * FROM servicos where entidade = :entidade and ispublic = true ORDER BY nome desc ", nativeQuery = true)
     List<Servicos> findPublico(Long entidade);
 
     @Query(value = "SELECT ismanual FROM servicos WHERE id = :id ", nativeQuery = true)

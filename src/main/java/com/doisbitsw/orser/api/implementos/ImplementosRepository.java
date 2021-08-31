@@ -11,14 +11,14 @@ public interface ImplementosRepository extends JpaRepository<Implementos, Long> 
     @Query(value = "SELECT * FROM implementos  ORDER BY id desc", nativeQuery = true)
     List<Implementos> findAll();
 
-    @Query(value = "SELECT * FROM implementos where setor = :setor and isativo = true and isdisponivel = true  ORDER BY id desc", nativeQuery = true)
+    @Query(value = "SELECT * FROM implementos where setor = :setor and isativo = true and isdisponivel = true  ORDER BY nome desc", nativeQuery = true)
     List<Implementos> findSetor(Long setor);
 
 
-    @Query(value = "SELECT * FROM implementos where entidade = :entidade and setor = :setor  ORDER BY isativo desc, isdisponivel desc,id desc", nativeQuery = true)
+    @Query(value = "SELECT * FROM implementos where entidade = :entidade and setor = :setor  ORDER BY isativo desc, isdisponivel desc,nome desc", nativeQuery = true)
     List<Implementos> findEntidadeSetor(Long entidade, Long setor);
 
-    @Query(value = "SELECT * FROM implementos where entidade = :entidade ORDER BY isativo desc, isdisponivel desc,id desc", nativeQuery = true)
+    @Query(value = "SELECT * FROM implementos where entidade = :entidade ORDER BY isativo desc, isdisponivel desc,nome desc", nativeQuery = true)
     List<Implementos> findEntidade(Long entidade);
 
 
