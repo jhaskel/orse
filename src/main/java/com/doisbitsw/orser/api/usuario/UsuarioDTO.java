@@ -15,6 +15,7 @@ public class UsuarioDTO {
     private String senha;
     private String nivel;
     private Boolean receberemail;
+    private String cod;
 
     private String created;
     private String celular;
