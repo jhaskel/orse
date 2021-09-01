@@ -37,6 +37,7 @@ public class ProtocolosDTO {
     private Boolean ismanual;
     private String codAg;
     private Double area;
+    private Boolean temEmprestimo;
 
     private Long ano;
     private Long mes;

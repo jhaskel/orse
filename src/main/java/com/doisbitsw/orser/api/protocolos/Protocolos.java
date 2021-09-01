@@ -44,6 +44,7 @@ public class Protocolos {
     private Boolean isativo;
     private Boolean ispago;
     private Boolean ismanual;
+    private Boolean temEmprestimo;
     private Double area;
 
     private Long ano;
