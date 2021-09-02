@@ -45,6 +45,12 @@ public class ProtocolosService {
         return rep.findAgendado(entidade,ano,setor).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
 
+
+    public List<ProtocolosDTO> getAgendadoAll(Long entidade, Long ano) {
+        return rep.findAgendadoAll(entidade,ano).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
+    }
+
+
     public List<ProtocolosDTO> getAgendadoMes(Long entidade, Long ano,Long mes,Long setor) {
         return rep.findAgendadoMes(entidade,ano,mes,setor).stream().map(ProtocolosDTO::create).collect(Collectors.toList());
     }
